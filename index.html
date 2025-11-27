@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Shoppy</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;;
+        }
+
+        .nav{
+            display: block;
+        }
+
+        .nav ul{
+            margin-top: 0;
+            list-style: none;
+            text-align: center;
+            background-color: black;
+            padding: 5px;
+            color: aliceblue;
+            font-weight: 100;
+        }
+
+        .nav ul li{
+            display: inline;
+            border-right: 1px solid rgba(245, 245, 220, 0.371);
+            padding: 2px  30px;
+            font-size: 15px;
+            font-weight: 100;
+            justify-content: space-between;
+        }
+
+
+        /*container1 */
+
+        .container1{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 40px;
+        }
+
+        .container1> .serch-container{
+            display: flex;
+            width: 400px;
+        }
+
+        .container1> .serch-container input{
+            padding: 10px 20px;
+            width:87%;
+            margin-right: 10px;
+            border: 0.5px solid rgba(0, 0, 0, 0.21);
+        }
+
+        .container1> .serch-container button{
+            background-color: #2fdab8;
+            color : white;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .container1> .logo-container{
+           width: 400px;
+           font-size:40px;
+           margin-left: 30px;
+        }
+
+         .container1> .logo-container a{
+            margin: 0 10px;
+            text-decoration: none;
+            color: black;
+            
+         }
+
+        .container1> .logo-container span{
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .container1> .socialMedia{
+            display: flex;
+            margin-left: auto;
+            align-items: center;
+
+        }
+
+        .container1> .socialMedia ul{
+            list-style: none;
+        }
+
+        .container1> .socialMedia ul li{
+            display: inline;
+            float: right;
+        }
+        .socialIcon{
+            padding: 10px;
+            background-color: black;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .socialIcon a {
+            color: white;
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="nav">
+        <ul>
+            <li>Sign In</li>
+            <li>Sign up</li>
+            <li>call:01234567898</li>
+            <li>info@example.com</li>
+        </ul>
+    </div>
+
+    <div class="container1">
+        <div class="serch-container">
+            <input type="text" placeholder="Search Here..">
+            <button type="submit">search</button>
+        </div>
+        <div class="logo-container">
+            <a href="index.html"><span>E</span>lite Shoppy</a>
+        </div>
+        <div class="socialMedia">
+            <p>Share On :</p>
+            <ul>
+                <li class="socialIcon"><a href="">1</a></li>
+                <li class="socialIcon"><a href="">2</a></li>
+                <li class="socialIcon"><a href="">3</a></li>
+                <li class="socialIcon"><a href="">4</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
