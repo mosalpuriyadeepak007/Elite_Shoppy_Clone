@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Elite Shoppy</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <style>
-        body{
+        body {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Open Sans', sans-serif;;
+            font-family: 'Open Sans', sans-serif;
+            ;
         }
 
-        .nav{
+        .material-symbols-outlined {
+            align-items: center;
+        }
+
+        .nav {
             display: block;
         }
 
-        .nav ul{
+        .nav ul {
             margin-top: 0;
             list-style: none;
             text-align: center;
@@ -26,10 +33,10 @@
             font-weight: 100;
         }
 
-        .nav ul li{
+        .nav ul li {
             display: inline;
             border-right: 1px solid rgba(245, 245, 220, 0.371);
-            padding: 2px  30px;
+            padding: 5px 30px;
             font-size: 15px;
             font-weight: 100;
             justify-content: space-between;
@@ -38,68 +45,69 @@
 
         /*container1 */
 
-        .container1{
+        .container1 {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 20px 40px;
+            padding: 0 40px;
         }
 
-        .container1> .serch-container{
+        .container1>.serch-container {
             display: flex;
-            width: 400px;
+            width: 500px;
         }
 
-        .container1> .serch-container input{
+        .container1>.serch-container input {
             padding: 10px 20px;
-            width:87%;
+            width: 87%;
             margin-right: 10px;
             border: 0.5px solid rgba(0, 0, 0, 0.21);
         }
 
-        .container1> .serch-container button{
+        .container1>.serch-container button {
             background-color: #2fdab8;
-            color : white;
+            color: white;
             padding: 10px;
             cursor: pointer;
             border: none;
         }
 
-        .container1> .logo-container{
-           width: 400px;
-           font-size:40px;
-           margin-left: 30px;
+        .container1>.logo-container {
+            width: 400px;
+            font-size: 40px;
+            margin-left: 50px;
         }
 
-         .container1> .logo-container a{
+        .container1>.logo-container a {
             margin: 0 10px;
             text-decoration: none;
             color: black;
-            
-         }
 
-        .container1> .logo-container span{
+        }
+
+        .container1>.logo-container span {
             background-color: black;
             color: white;
             padding: 10px 20px;
         }
 
-        .container1> .socialMedia{
+        .container1>.socialMedia {
             display: flex;
-            margin-left: auto;
+            /* margin-left: auto; */
             align-items: center;
 
         }
 
-        .container1> .socialMedia ul{
+        .container1>.socialMedia ul {
             list-style: none;
         }
 
-        .container1> .socialMedia ul li{
+        .container1>.socialMedia ul li {
             display: inline;
             float: right;
         }
-        .socialIcon{
+
+        .socialIcon {
             padding: 10px;
             background-color: black;
             margin: 5px;
@@ -111,9 +119,170 @@
             text-decoration: none;
         }
 
+
+
+        /* Container 2 */
+
+        .container2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            /* padding: 20px 30px; */
+
+        }
+
+        .container2>.navContainer {
+            margin-right: 20px;
+        }
+
+        .container2>.navContainer ul {
+            display: flex;
+            list-style: none;
+            float: right;
+        }
+
+        .container2>.navContainer ul li {
+            /* display: flex; */
+            border-bottom: 5px;
+            margin-right: 30px;
+        }
+
+        .container2>.navContainer ul li a {
+            position: relative;
+            text-decoration: none;
+            color: #fff;
+            border-bottom: 5px;
+            padding: 5px 5px;
+        }
+
+        .container2>.navContainer ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            height: 5px;
+            width: 0%;
+            background: #2fdab8;
+            transition: width 0.7s ease;
+        }
+
+        .container2>.navContainer ul li a:hover:after {
+            width: 100%;
+        }
+
+        .Cart {
+            padding: 15px 60px;
+            background-color: #2fdab8;
+        }
+
+        .Cart button {
+            background-color: #2fdab800;
+            border: none;
+            cursor: pointer;
+        }
+
+        .Cart>span {
+            color: black;
+        }
+
+
+        /* Crousel container */
+
+        .carousel {
+            width: 100%;
+            /* max-width: 800px; */
+            height: 400px;
+            overflow: hidden;
+            /* border-radius: 15px; */
+            /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); */
+            position: relative;
+        }
+
+
+        .slides {
+            display: flex;
+            /* width: 400%; */
+            animation: slide 16s infinite;
+        }
+
+
+        .slide {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+
+        .slide img {
+            width: 100%;
+            display: block;
+            height: 500px;
+            object-fit: fill;
+        }
+
+
+        /* Auto sliding animation */
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            25% {
+                transform: translateX(0);
+            }
+
+            30% {
+                transform: translateX(-100%);
+            }
+
+            50% {
+                transform: translateX(-100%);
+            }
+
+            55% {
+                transform: translateX(-200%);
+            }
+
+            75% {
+                transform: translateX(-200%);
+            }
+
+            80% {
+                transform: translateX(-300%);
+            }
+
+            100% {
+                transform: translateX(-300%);
+            }
+        }
+
+
+        .crousel-content {
+            display: flex;
+            position: absolute;
+            width: 100%;
+            top: 40%;
+            /* transform: translateY(-50%); */
+            justify-content: space-between;
+            align-items: center;
+            /* padding: 0 25px; */
+        }
+
+        .crousel-content .left-btn, .right-btn{
+            padding: 50px;
+            font-size: 20px;
+            
+        }
+
+        .crousel-content .content > .slide1 >h1{
+            font-size: 60px;
+            color: white;
+            font-weight: 100;
+        }
     </style>
 
 </head>
+
 <body>
     <div class="nav">
         <ul>
@@ -142,5 +311,62 @@
             </ul>
         </div>
     </div>
+
+    <div class="container2">
+        <div class="navContainer">
+
+
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Men's Wear</a></li>
+                <li><a href="">Women's wear</a></li>
+                <li><a href="">Short Codess</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div class="Cart">
+            <button> <span class="material-symbols-outlined">
+                    shopping_cart
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <div class="carousel">
+        <div class="slides">
+            <div class="slide">
+                <img src="./Images/banner1.jpg" alt="Slide 1">
+            </div>
+            <div class="slide">
+                <img src="./Images/banner2.jpg" alt="Slide 2">
+            </div>
+            <div class="slide">
+                <img src="./Images/banner3.jpg" alt="Slide 3">
+            </div>
+            <div class="slide">
+                <img src="./Images/banner6.jpg" alt="Slide 4">
+            </div>
+        </div>
+    </div>
+
+    <div class="crousel-content">
+        <div class="left-btn"><span class="material-symbols-outlined">
+                keyboard_arrow_left
+            </span></div>
+        <div class="content">
+            <div class="slide1">
+                <h1>The Biggest Sale</h1>
+                <p>Special for today</p>
+                <button>Shop now</button>
+            </div>
+        </div>
+        <div class="right-btn">
+            <span class="material-symbols-outlined">
+                keyboard_arrow_right
+            </span>
+        </div>
+    </div>
 </body>
+
 </html>
