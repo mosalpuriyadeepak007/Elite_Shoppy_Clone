@@ -2,8 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
-    ;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .material-symbols-outlined {
@@ -64,9 +63,10 @@ body {
 }
 
 .container1>.logo-container {
-    width: 400px;
+    width: 300px;
     font-size: 40px;
-    margin-left: 50px;
+    margin-left: 40px;
+    margin-right:10px ;
 }
 
 .container1>.logo-container a {
@@ -79,14 +79,17 @@ body {
 .container1>.logo-container span {
     background-color: black;
     color: white;
-    padding: 10px 20px;
+    padding: 10px 10px;
 }
 
 .container1>.socialMedia {
-    display: flex;
-    /* margin-left: auto; */
+    display:flex;
     align-items: center;
+    width: 300px;
 
+}
+.container1>.socialMedia p{
+    display: inline;
 }
 
 .container1>.socialMedia ul {
@@ -94,8 +97,8 @@ body {
 }
 
 .container1>.socialMedia ul li {
-    display: inline;
-    float: right;
+    display: inline-block;
+    float: left;
 }
 
 .socialIcon {
@@ -560,6 +563,26 @@ body {
 
 
     @media (max-width: 960px) {
+
+        /* container 1 */
+
+        .container1{
+            display: flex;
+            flex-wrap: wrap;
+            width: 95%;
+        }
+
+        .container1>.serch-container{
+            width: 100%;
+            padding: 10px;
+        }
+
+        .serch-container >input{
+            width: 80%;
+        }
+
+
+        /* container 4 */
       .container4 {
         display: flex;
         flex-wrap: wrap;
