@@ -959,202 +959,245 @@ body {
 
 
 .Container6 {
-      width: 100%;
-      background-color: #ffffff;
-      padding: 50px 0px;
-    }
+  width: 100%;
+  background-color: #ffffff;
+  padding: 50px 0px;
+}
 
-    .Container6 h3 {
-      text-align: center;
-      margin: 0;
-      font-size: 35px;
-      font-weight: 100;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
+.Container6 h3 {
+  text-align: center;
+  margin: 0;
+  font-size: 35px;
+  font-weight: 100;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
 
-    .Container6>h3>span {
-      font-weight: 700;
-    }
+.Container6>h3>span {
+  font-weight: 700;
+}
 
-    .Container6 ul {
-      width: 80%;
-      display: flex;
-      justify-content: center;
-      list-style: none;
-      margin: 30px auto;
-      max-width: 1000px;
-    }
+.Container6 ul {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 30px auto;
+  max-width: 1000px;
+}
 
-    .Container6 ul li {
-      width: 100%;
-      padding: 20px 15px;
-      cursor: pointer;
-      font-size: 18px;
-      background-color: #ffffff;
-      text-align: center;
-      color: rgba(0, 0, 0, 0.86);
-      font-weight: 600;
-      text-transform: uppercase;
-    }
+.Container6 ul li {
+  width: 100%;
+  padding: 20px 15px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: #ffffff;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.86);
+  font-weight: 600;
+  text-transform: uppercase;
+}
 
-    .Container6>ul>li>a {
-      text-decoration: none;
-      color: inherit;
-    }
+.Container6>ul>li>a {
+  text-decoration: none;
+  color: inherit;
+}
 
-    .BoxesContainer {
-      margin-top: 30px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin: 0 auto;
-      gap: 20px;
-      max-width: 1000px;
-    }
+.BoxesContainer {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 20px;
+  max-width: 1000px;
+}
 
-    .CardsContainer {
-      width: 220px;
-      height: 350px;
-      background-color: #ffffff;
-      font-size: 50px;
-      color: #888;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: 0.3s;
-    }
+.CardsContainer {
+  width: 220px;
+  height: 350px;
+  background-color: #ffffff;
+  font-size: 50px;
+  color: #888;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
 
-    .ImgContainer {
-      position: relative;
-      width: 100%;
-      height: 60%;
-      perspective: 1000px;
-      justify-content : center;
-      overflow: hidden;
-    }
+.ImgContainer {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  perspective: 1000px;
+  justify-content: center;
+  overflow: hidden;
+}
 
-    .flip-inner {
-      width: 90%;
-      height: 100%;
-      transition: transform 0.7s;
-      transform-style: preserve-3d;
-      position: absolute;
-    }
+.flip-inner {
+  width: 90%;
+  height: 100%;
+  transition: transform 0.7s;
+  transform-style: preserve-3d;
+  position: absolute;
+}
 
-    .ImgContainer:hover .flip-inner {
-      transform: rotateY(180deg);
-    }
+.ImgContainer:hover .flip-inner {
+  transform: rotateY(180deg);
+}
 
-    .flip-front,
-    .flip-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      top: 0;
-      left: 0;
-    }
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  top: 0;
+  left: 0;
+}
 
-    .flip-front img,
-    .flip-back img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      padding: 20px;
-      object-fit: cover;
-    }
+.flip-front img,
+.flip-back img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  object-fit: cover;
+}
 
-    .flip-back {
-      transform: rotateY(180deg);
-    }
+.flip-back {
+  transform: rotateY(180deg);
+}
 
-    /* ---------------------- */
+/* ---------------------- */
 
-    .CardsContainer a {
-      text-decoration: none;
-      color: #fc636b;
-      font-size: 15px;
-      display: block;
-      text-align: center;
-      margin: 10px;
-    }
+.CardsContainer a {
+  text-decoration: none;
+  color: #fc636b;
+  font-size: 15px;
+  display: block;
+  text-align: center;
+  margin: 10px;
+}
 
-    .productPrice {
-      text-align: center;
-      margin-top: 5px;
-      font-size: 19px;
-      color: #333;
-    }
+.productPrice {
+  text-align: center;
+  margin-top: 5px;
+  font-size: 19px;
+  color: #333;
+}
 
-    .productPrice span {
-      font-weight: 600;
-      margin-right: 10px;
-    }
+.productPrice span {
+  font-weight: 600;
+  margin-right: 10px;
+}
 
-    .productPrice del {
-      color: #888;
-      font-size: 17px;
-    }
+.productPrice del {
+  color: #888;
+  font-size: 17px;
+}
 
-    .AddToCart {
-      position: relative;
-      width: 220px;
-      align-items: center;
-      justify-content: center;
-    }
+.AddToCart {
+  position: relative;
+  width: 220px;
+  align-items: center;
+  justify-content: center;
+}
 
-    .AddToCart>button {
-      width: 70%;
-      padding: 5px 0;
-      background-color: #2fdab8;
-      border: none;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      margin-left: 30px;
-    }
+.AddToCart>button {
+  width: 70%;
+  padding: 10px 0;
+  background-color: #2fdab8;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 30px;
+}
 
-    .AddToCart>.BorderEffect {
-      position: absolute;
-      top: 6px;
-      width: 75%;
-      margin: 20px;
-      padding: 10px 0px;
-      border: 5px solid #2fdab8;
-      transform: scale(0.9);
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
+.AddToCart>.BorderEffect {
+  position: absolute;
+  top: -3px;
+  width: 75%;
+  margin: 20px;
+  padding: 18px 0px;
+  border: 5px solid #2fdab8;
+  transform: scale(0.9);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
 
-    .AddToCart:hover>.BorderEffect {
-      transform: scale(1);
-      top: 0px;
-      padding: 17px 0px;
-    }
+.AddToCart:hover>.BorderEffect {
+  transform: scale(1);
+  top: -6px;
+  padding: 22px 0px;
+}
 
-    .QuickView {
-      position: absolute;
-      top: 0px;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #000000;
-      padding: 8px 15px;
-      /* border-radius: 20px; */
-      opacity: 0;
-      transition: opacity 0.9s, top 0.9s;
-      z-index: 10;
-      width: 100%;
-    }
+.QuickView {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000000;
+  padding: 8px 15px;
+  /* border-radius: 20px; */
+  opacity: 0;
+  transition: opacity 0.9s, top 0.9s;
+  z-index: 10;
+  width: 100%;
+}
 
-    .ImgContainer:hover .QuickView {
-      opacity: 1;
-      top: 75%;
-      background-color: #2fdab8;
-    }
+.ImgContainer:hover .QuickView {
+  opacity: 1;
+  top: 75%;
+  background-color: #2fdab8;
+}
 
-    .QuickView a {
-      text-decoration: none;
-      color: white;
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
+.QuickView a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+
+.container7 {
+  height: 400px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.con-7 {
+  /* background-image: url("../images/banner7.jpg"); */
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 600px rgba(0, 0, 0, 0.5);
+}
+
+.con-7>h4 {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #fff;
+
+}
+
+.con-7>h4>span {
+  color: #000000;
+}
+
+.con-7>div> .BorderEffect{
+  top:-22px;
+}
+
+.con-7>div:hover>.BorderEffect {
+  top: -28px;
+}
