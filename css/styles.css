@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:"Nunito Sans", sans-serif;
 }
 
 .background {
@@ -1201,3 +1201,77 @@ body {
 .con-7>div:hover>.BorderEffect {
   top: -28px;
 }
+
+/* Clearfix container */
+
+.Clearfix {
+      background-color: #fff;
+      padding: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .clr {
+      display: flex;
+      height: 150px;
+      width: 300px;
+      background-color: #ffffff;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    /* Icon Box */
+    .Icon {
+      position: relative;
+      height: 80px;
+      width: 80px;
+      background: #000;
+      margin: 0 10px;
+      overflow: hidden;
+      text-align: center;
+      line-height: 100px;
+    }
+
+    /* Green layer using ::before */
+    .Icon::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: #2fdab8;
+      transform: scale(0);
+      transition: transform 0.4s ease-in-out;
+      transform-origin: center;
+      z-index: 0;
+    }
+
+    /* Bring content above green layer */
+    .Icon * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hover Effect */
+    .clr:hover .Icon::before {
+      transform: scale(1);
+    }
+
+    .clr-content {
+      color: #545454;
+    }
+
+    .clr-content h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      color: #2fdab8;
+    }
+
+
+    .Icon>span {
+      font-size: 25px;
+      text-align: center;
+      color: white;
+    }
