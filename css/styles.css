@@ -52,6 +52,7 @@ body {
 /*container1 */
 
 .container1 {
+  width: calc(100% - 40px);
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -213,11 +214,18 @@ body {
   align-items: center;
 }
 
-.container2-flex>.FlexContainer>.Icon {
+.container2-flex>.FlexContainer>label {
   color: #fff;
   cursor: pointer;
   width: auto;
   margin-left: 10px;
+  padding: 5px;
+}
+.container2-flex>.FlexContainer>label>span
+{
+  padding: 10px;
+  border: 1px solid #737070;
+  border-radius: 10px;
 }
 
 .container2-flex>.FlexContainer>.Cart {
@@ -668,7 +676,10 @@ body {
   .container1 {
     display: flex;
     flex-wrap: wrap;
-    width: 95%;
+    width:calc(100%-50px);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
   }
 
   .container1>.serch-container {
@@ -999,7 +1010,7 @@ body {
   }
 
   .container2-flex{
-    display: block;i
+    display: block;
   }
 
 
