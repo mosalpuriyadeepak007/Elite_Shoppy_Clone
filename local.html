@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Members</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* Container 2 - Nave bar(  "Home", "about" , "etc") */
+        .container2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: black;
+            width: 100%;
+        }
+
+        .container2>.navContainer {
+            margin-right: 20px;
+        }
+
+        .container2>.navContainer ul {
+            display: flex;
+            list-style: none;
+            float: right;
+        }
+
+        .navContainer ul li {
+            margin-right: 30px;
+        }
+
+        .navContainer ul li a {
+            position: relative;
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 5px;
+        }
+
+        .navContainer ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            height: 5px;
+            width: 0%;
+            background: #2fdab8;
+            transition: width 0.7s ease;
+        }
+
+        .navContainer ul li a:hover:after {
+            width: 100%;
+        }
+
+        .Cart {
+            padding: 15px 60px;
+            background-color: #2fdab8;
+        }
+
+        .Cart button {
+            background-color: #2fdab800;
+            border: none;
+            cursor: pointer;
+        }
+
+        .Cart>span {
+            color: black;
+        }
+
+        /* ===== Mobile Menu Part ===== */
+
+        .container2-flex {
+            display: none;
+            width: 100%;
+            background-color: #000;
+        }
+
+        /* hide checkbox */
+        #check {
+            display: none;
+        }
+
+        .container2-flex>.FlexContainer {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(63, 63, 63, 0.382);
+            align-items: center;
+        }
+
+        .container2-flex>.FlexContainer>label {
+            color: #fff;
+            cursor: pointer;
+            width: auto;
+            margin-left: 10px;
+            padding: 5px;
+        }
+
+        .container2-flex>.FlexContainer>label>span {
+            padding: 10px;
+            border: 1px solid #737070;
+            border-radius: 10px;
+        }
+
+        .container2-flex>.FlexContainer>.Cart {
+            padding: 10px 20px;
+            height: 100%;
+            margin-right: 10px;
+        }
+
+        .container2-flex>.navContainer {
+            width: 100%;
+        }
+
+        .container2-flex>.navContainer>ul {
+            display: none;
+            padding: 20px;
+            margin-bottom: 0;
+            list-style: none;
+        }
+
+        .container2-flex>.navContainer>ul>li {
+            padding: 10px 0;
+        }
+
+        /* ✅ When checkbox checked → show menu */
+        #check:checked~.navContainer>ul {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Desktop menu -->
+    <div class="container2">
+        <div class="navContainer">
+            <ul>
+                <li><a href="index.html" id="Home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="">Men's Wear
+                         <span class="material-symbols-outlined">
+                            arrow_drop_down
+                        </span>
+                    </a>
+                </li>
+                <li><a href="">Women's wear
+                        <span class="material-symbols-outlined">
+                            arrow_drop_down
+                        </span>
+                    </a></li>
+                <li><a href="">Short Codess</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </div>
+        <div class="Cart">
+            <button>
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="container2-flex">
+        <!-- 👇 checkbox is now direct child of .container2-flex -->
+        <input type="checkbox" id="check">
+
+        <div class="FlexContainer">
+            <label for="check" class="Icon">
+                <span class="material-symbols-outlined">menu</span>
+            </label>
+            <div class="Cart">
+                <button>
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="navContainer">
+            <ul>
+                <li>
+                    <a href="">Home
+
+                    </a>
+                </li>
+                <li><a href="">
+                        About
+                    </a>
+                </li>
+                <li><a href="">
+                        Men's Wear
+                    </a>
+                </li>
+                <li><a href="">
+                        Women's wear
+                    </a>
+                </li>
+                <li><a href="">
+                        Short Codess
+                    </a>
+                </li>
+                <li><a href="">
+                        Contact
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
