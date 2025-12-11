@@ -49,12 +49,73 @@
             <ul>
                 <li><a href="index.html" id="Home">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="">Men's Wear</a></li>
-                <li><a href="">Women's wear</a></li>
+                <li><input type="checkbox" id="men"  name="gender" style="display: none;">
+                    <label for="men">Men's Wear
+                        <span class="material-symbols-outlined">
+                            arrow_drop_down
+                        </span>
+                    </label>
+                    <ul class="MensCard">
+                        <div class="DropdownCard">
+                            <div class="MensCard-Img" >
+                            </div>
+                            <ul class="multi-column-dropdown">
+                                <li><a href="mens.html">Clothing</a></li>
+                                <li><a href="mens.html">Wallets</a></li>
+                                <li><a href="mens.html">Footwear</a></li>
+                                <li><a href="mens.html">Watches</a></li>
+                                <li><a href="mens.html">Accessories</a></li>
+                                <li><a href="mens.html">Bags</a></li>
+                                <li><a href="mens.html">Caps & Hats</a></li>
+                            </ul>
+                            <ul class="multi-column-dropdown">
+                                <li><a href="mens.html">Clothing</a></li>
+                                <li><a href="mens.html">Wallets</a></li>
+                                <li><a href="mens.html">Footwear</a></li>
+                                <li><a href="mens.html">Watches</a></li>
+                                <li><a href="mens.html">Accessories</a></li>
+                                <li><a href="mens.html">Bags</a></li>
+                                <li><a href="mens.html">Caps & Hats</a></li>
+                            </ul>
+                        </div>
+                    </ul>
+                </li>
+                <li><input type="checkbox" id="women" name="gender" style="display: none;">
+                    <label for="women">Women's Wear
+                        <span class="material-symbols-outlined">
+                            arrow_drop_down
+                        </span>
+                    </label>
+                    <ul class="WomensCard">
+                        <div class="DropdownCard">
+                            <ul class="multi-column-dropdown">
+                                <li><a href="womens.html">Clothing</a></li>
+                                <li><a href="womens.html">Wallets</a></li>
+                                <li><a href="womens.html">Footwear</a></li>
+                                <li><a href="womens.html">Watches</a></li>
+                                <li><a href="womens.html">Accessories</a></li>
+                                <li><a href="womens.html">Bags</a></li>
+                                <li><a href="womens.html">Caps & Hats</a></li>
+                            </ul>
+                            <ul class="multi-column-dropdown">
+                                <li><a href="womens.html">Clothing</a></li>
+                                <li><a href="womens.html">Wallets</a></li>
+                                <li><a href="womens.html">Footwear</a></li>
+                                <li><a href="womens.html">Watches</a></li>
+                                <li><a href="womens.html">Accessories</a></li>
+                                <li><a href="womens.html">Bags</a></li>
+                                <li><a href="womens.html">Caps & Hats</a></li>
+                            </ul>
+                            <div class="WomensCard-Img" >
+                            </div>
+                        </div>
+                    </ul>
+                </li>
                 <li><a href="">Short Codess</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
         </div>
+
         <div class="Cart">
             <button>
                 <span class="material-symbols-outlined">shopping_cart</span>
@@ -64,13 +125,13 @@
 
     <!-- Mobile menu -->
     <div class="container2-flex">
-        <!-- 👇 checkbox is now direct child of .container2-flex -->
         <input type="checkbox" id="check">
 
         <div class="FlexContainer">
             <label for="check" class="Icon">
                 <span class="material-symbols-outlined">menu</span>
             </label>
+
             <div class="Cart">
                 <button>
                     <span class="material-symbols-outlined">shopping_cart</span>
@@ -80,34 +141,43 @@
 
         <div class="navContainer">
             <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
                 <li>
-                    <a href="">Home
-                        
-                    </a>
+                    <a href="" id="MensCard">Men's Wear</a>
+                    <ul class="MensCard">
+                        <div class="DropdownCard">
+                            <div class="DropdownCard" style="background-image: url(./Images/banner6.jpg);"></div>
+                            <ul class="multi-column-dropdown">
+                                <li><a href="mens.html">Clothing</a></li>
+                                <li><a href="mens.html">Wallets</a></li>
+                                <li><a href="mens.html">Footwear</a></li>
+                                <li><a href="mens.html">Watches</a></li>
+                                <li><a href="mens.html">Accessories</a></li>
+                                <li><a href="mens.html">Bags</a></li>
+                                <li><a href="mens.html">Caps & Hats</a></li>
+                            </ul>
+                        </div>
+                        <div class="DropdownCard">
+                            <ul class="multi-column-dropdown">
+                                <li><a href="mens.html">Clothing</a></li>
+                                <li><a href="mens.html">Wallets</a></li>
+                                <li><a href="mens.html">Footwear</a></li>
+                                <li><a href="mens.html">Watches</a></li>
+                                <li><a href="mens.html">Accessories</a></li>
+                                <li><a href="mens.html">Bags</a></li>
+                                <li><a href="mens.html">Caps & Hats</a></li>
+                            </ul>
+                        </div>
+                    </ul>
                 </li>
-                <li><a href="">
-                        About
-                    </a>
-                </li>
-                <li><a href="">
-                        Men's Wear
-                    </a>
-                </li>
-                <li><a href="">
-                        Women's wear
-                    </a>
-                </li>
-                <li><a href="">
-                        Short Codess
-                    </a>
-                </li>
-                <li><a href="">
-                        Contact
-                    </a>
-                </li>
+                <li><a href="">Women's wear</a></li>
+                <li><a href="">Short Codess</a></li>
+                <li><a href="">Contact</a></li>
             </ul>
         </div>
     </div>
+
 
     <div class="carousel">
         <div class="slides">
@@ -633,6 +703,24 @@
             © 2017 Elite shoppy. All rights reserved | Design by <a href="#">W3layouts</a>
         </div>
     </div>
+
+    <script>
+    const menCheck = document.getElementById("men");
+    const womenCheck = document.getElementById("women");
+    const body = document.getElementsByTagName("body");
+
+    menCheck.addEventListener("change", function () {
+        if (menCheck.checked) {
+            womenCheck.checked = false;
+        }
+    });
+
+    womenCheck.addEventListener("change", function () {
+        if (womenCheck.checked) {
+            menCheck.checked = false;
+        }
+    });
+</script>
 </body>
 
 </html>
