@@ -23,32 +23,48 @@
 
     /* mens.html  */
     .Mens-products {
-      width: calc(100%-40px);
+      width: 100%;
       background-color: white;
-      /* height: 100vh; */
-      padding: 20px;
       padding-top: 50px;
-      justify-content: center;
+      justify-items: center;
+    }
+
+    .Mainflc {
+      display: flex;
+      width: 1200px;
+      border: 1px solid #000000;
     }
 
 
     .left-containner {
       height: 100%;
       width: 350px;
-      border: 1px solid black;
+      /* border: 1px solid black; */
+      display: flex;
+      flex-direction: column;
     }
 
     .filter-box {
-      width: calc(100%-40px);
-      padding: 20px;
+      width: calc(100%);
+      /* padding: 20px; */
       align-items: center;
       justify-content: center;
     }
 
     .filter-box h2 {
-      margin-bottom: 15px;
+      margin-bottom: 5px;
       text-align: center;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      letter-spacing: 1.3px;
+      font-weight: 100;
     }
+
+    .filter-box h2>span {
+      font-weight: 700;
+    }
+
+
 
     .range-slider {
       position: relative;
@@ -71,7 +87,7 @@
       background: #ff3b3b;
       border-radius: 50%;
       cursor: pointer;
-      margin-top: 11px;
+      margin-top: 13px;
     }
 
     /* Track line */
@@ -82,7 +98,6 @@
       width: 100%;
       top: 50%;
       transform: translateY(-50%);
-      border-radius: 5px;
     }
 
     .slider-range {
@@ -99,7 +114,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 1px solid rgba(0, 0, 0, 0.497);
+      border: 1px solid rgba(0, 0, 0, 0.352);
       padding: 5px;
     }
 
@@ -124,14 +139,14 @@
 
     .category {
       margin-top: 30px;
-      border: 1px solid black;
+      border: 1px solid #d2d2d2;
     }
 
     .category h4 {
       margin: 0;
       text-align: center;
       padding: 10px;
-      border-bottom: 1px solid black;
+      border-bottom: 1px solid #d2d2d2;
       background-color: #f7f7f7;
       text-transform: uppercase;
       letter-spacing: 2px;
@@ -194,14 +209,147 @@
       display: block;
     }
 
+
+    .community {
+      margin-top: 30px;
+      border: 1px solid #d2d2d2;
+    }
+
+    .community h4 {
+      margin: 0;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #d2d2d2;
+      background-color: #f7f7f7;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 1.4rem;
+      color: #2fdab8;
+    }
+
     .community form{
-      padding: 20px;
-      line-height: 2em;
+      padding: 30px;
+      line-height: 1.3em;
+      justify-content: center;
     }
 
 
     .radio{
       display: flex;
+      padding-bottom: 10px;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .radio input[type="radio"]{
+      appearance: none;
+      width: 12px;
+      height: 12px;
+      background-color: rgb(255, 255, 255);
+      border-radius: 50%;
+      cursor: pointer;
+      outline: 2px solid #2fdab8;
+    }
+
+    .radio input[type="radio"]:checked{
+      background-color: rgb(0, 0, 0);
+    }
+
+    form>button{
+      margin-top: 10px;
+      padding: 8px 20px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+
+
+    .right-container {
+      flex-grow: 1;
+      padding-left: 20px;
+    }
+    .cl-fix {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 70px;
+      padding: 20px 0;
+    }
+
+    .cl-fixs {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .cl-fixs label {
+      font-size: 1.1rem;
+      font-weight: 100;
+      color: #000000;
+    }
+
+    .cl-fixs select {
+      padding: 5px;
+      font-size: 1rem;
+      border: 1px solid #d2d2d2;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #545454;
+    }
+
+    .crsl{
+      margin-top: 20px;
+      max-width: 600px;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .crsl-list{
+      display: flex;
+      width: 300%;
+      height: 100%;
+      animation: scroll 15s linear infinite;
+    }
+
+    .crsl-list>li{
+      width: 100%;
+      height: 100%;
+      list-style: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    .crsl-list>li img{
+      width: 100%;
+      height: 100%;
+      object-fit:cover;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      50% {
+        transform: translateX(100%);
+      }
+
+      75% {
+        transform: translateX(200%);
+      }
+
+      95% {
+        transform: translateX(300%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
     }
   </style>
 </head>
@@ -209,130 +357,171 @@
 <body>
 
   <div class="Mens-products">
-    <div class="left-containner">
-      <div class="filter-box">
-        <h2>Filter By Price</h2>
-
-        <div class="range-slider">
-          <div class="slider-track"></div>
-          <div class="slider-range" id="slider-range"></div>
-
-          <input type="range" id="min" min="0" max="9900" step="100" value="1000">
-          <input type="range" id="max" min="0" max="9900" step="100" value="7000">
+    <div class="Mainflc">
+      <div class="left-containner">
+        <div class="filter-box">
+          <h2><span>Filter By</span> Price</h2>
+  
+          <div class="range-slider">
+            <div class="slider-track"></div>
+            <div class="slider-range" id="slider-range"></div>
+  
+            <input type="range" id="min" min="0" max="9900" step="100" value="1000">
+            <input type="range" id="max" min="0" max="9900" step="100" value="7000">
+          </div>
+  
+          <div class="value-box">
+            <span>$</span><input type="text" id="min-value">-
+            <span>$</span><input type="text" id="max-value">
+          </div>
         </div>
-
-        <div class="value-box">
-          <span>$</span><input type="text" id="min-value">-
-          <span>$</span><input type="text" id="max-value">
+  
+        <div class="category">
+          <h4>categories</h4>
+          <ul class="category-list">
+            <li class="MensWear"><label for="Mens">
+                <span class="material-symbols-outlined">
+                  arrow_right_alt
+                </span>Men's</label>
+              <input type="checkbox" id="Mens">
+              <ul class="category-list">
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Ethnic Wear</label></li>
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Ethnic Wear</label></li>
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Casual Wear</label></li>
+              </ul>
+            </li>
+            <li class="Best-collections">
+              <label for="Best-collections"><span class="material-symbols-outlined">
+                  arrow_right_alt
+                </span>Best Collections</label>
+              <input type="checkbox" id="Best-collections">
+              <ul class="category-list">
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>New Arrivals</label></li>
+              </ul>
+            </li>
+            <li class="Best-Offers">
+              <label for="Best_Offers">
+                <span class="material-symbols-outlined">
+                  arrow_right_alt
+                </span>Best Offers</label>
+              <input type="checkbox" id="Best_Offers">
+              <ul class="category-list">
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Summer Discount Sale</label></li>
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Exciting Offers</label></li>
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Flat Discount</label></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="community">
+          <h4>community Poll</h4>
+          <form action="">
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio"name="community" id="c1" value="More convenient for shipping and delivery">
+                <label for="c1">More convenient for shipping and delivery</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio"name="community" id="c2" value="Lower Price">
+                <label for="c2">Lower Price</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio"name="community" id="c3" value="Track your item">
+                <label for="c3">Track your item</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio"name="community" id="c4" value="Big choice">
+                <label for="c4">Big choice</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio"name="community" id="c5" value="More color to choose">
+                <label for="c5">More color to choose</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio"name="community" id="c6" value="Secure Payment">
+                <label for="c6">Secure Payment</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio"name="community" id="c7" value="Money Back Guarantee">
+                <label for="c7">Money Back Guarantee</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio"name="community" id="c8" value="Others">
+                <label for="c8">Others</label>
+              </div>
+            </div>
+            <button type="submit">Send</button>
+          </form>
         </div>
       </div>
+      <div class="right-container">
+        <h2>
+          <span>Product</span> Compare(0)
+        </h2> <br/>
+        <hr />
 
-      <div class="category">
-        <h4>categories</h4>
-        <ul class="category-list">
-          <li class="MensWear"><label for="Mens">
-              <span class="material-symbols-outlined">
-                arrow_right_alt
-              </span>Men's</label>
-            <input type="checkbox" id="Mens">
-            <ul class="category-list">
-              <li><label for=""><span class="material-symbols-outlined">
-                    arrow_right_alt
-                  </span>Ethnic Wear</label></li>
-              <li><label for=""><span class="material-symbols-outlined">
-                    arrow_right_alt
-                  </span>Ethnic Wear</label></li>
-              <li><label for=""><span class="material-symbols-outlined">
-                    arrow_right_alt
-                  </span>Casual Wear</label></li>
-            </ul>
-          </li>
-          <li class="Best-collections">
-            <label for="Best-collections"><span class="material-symbols-outlined">
-                arrow_right_alt
-              </span>Best Collections</label>
-            <input type="checkbox" id="Best-collections">
-            <ul class="category-list">
-              <li><label for=""><span class="material-symbols-outlined">
-                    arrow_right_alt
-                  </span>New Arrivals</label></li>
-            </ul>
-          </li>
-          <li class="Best-Offers">
-            <label for="Best_Offers">
-              <span class="material-symbols-outlined">
-                arrow_right_alt
-              </span>Best Offers</label>
-            <input type="checkbox" id="Best_Offers">
-            <ul class="category-list">
-              <li><label for=""><span class="material-symbols-outlined">
-                    arrow_right_alt
-                  </span>Summer Discount Sale</label></li>
-              <li><label for=""><span class="material-symbols-outlined">
-                    arrow_right_alt
-                  </span>Exciting Offers</label></li>
-              <li><label for=""><span class="material-symbols-outlined">
-                    arrow_right_alt
-                  </span>Flat Discount</label></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <div class="community">
-        <h4>community Poll</h4>
-        <form action="">
-          <div class="c-checkbox">
-            <div class="radio">
-              <input type="radio"name="community" name="community" id="c1" value="More convenient for shipping and delivery">
-              <label for="c1">More convenient for shipping and delivery</label>
-            </div>
+        <div class="cl-fix">
+          <div class="cl-fixs">
+            <label for="select-filter">Sort By :</label> 
+            <select name="Filter" id="select-filter">
+              <option value="">Default</option>
+              <option value="Name(A-Z)">Name(A-Z)</option>
+              <option value="Name(Z-A)">Name(Z-A)</option>
+              <option value="Price(High-Low)">Price(High-Low)</option>
+              <option value="Price(Low-High)">Price(Low-High)</option>
+              <option value="Model(A-Z)">Model(A-Z)</option>
+              <option value="Model(Z-A)">Model(Z-A)</option>
+            </select>
           </div>
-          <div class="c-checkbox">
-            <div class="radio">
-              <input type="radio"name="community" name="community" id="c2" value="Lower Price">
-              <label for="c2">Lower Price</label>
-            </div>
+          <div class="cl-fixs">
+            <label for="select-show">Showing :</label>
+            <select name="Show" id="select-show">
+              <option value="7">7</option>
+              <option value="14">14</option>
+              <option value="28">28</option>
+              <option value="35">35</option>
+            </select>
           </div>
-          <div class="c-checkbox">
-            <div class="radio">
-              <input type="radio"name="community" name="community" id="c3" value="Track your item">
-              <label for="c3">Track your item</label>
-            </div>
-          </div>
-          <div class="c-checkbox">
-            <div class="radio">
-              <input type="radio"name="community" name="community" id="c4" value="Big choice">
-              <label for="c4">Big choice</label>
-            </div>
-          </div>
-          <div class="c-checkbox">
-            <div class="radio">
-              <input type="radio"name="community" name="community" id="c5" value="More color to choose">
-              <label for="c5">More color to choose</label>
-            </div>
-          </div>
-          <div class="c-checkbox">
-            <div class="radio">
-              <input type="radio"name="community" name="community" id="c6" value="Secure Payment">
-              <label for="c6">Secure Payment</label>
-            </div>
-          </div>
-          <div class="c-checkbox">
-            <div class="radio">
-              <input type="radio"name="community" name="community" id="c7" value="Money Back Guarantee">
-              <label for="c7">Money Back Guarantee</label>
-            </div>
-          </div>
-          <div class="c-checkbox">
-            <div class="radio">
-              <input type="radio"name="community" name="community" id="c8" value="Others">
-              <label for="c8">Others</label>
-            </div>
-          </div>
-        </form>
+        </div>
+        <hr/>
+
+        <div class="crsl">
+          <ul class="crsl-list">
+            <li><img src="./Images/banner6.jpg" alt=""></li>
+            <li><img src="./Images/banner2 (1).jpg" alt=""></li>
+            <li><img src="./Images/banner3.jpg" alt=""></li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="right-container"></div>
   </div>
 
   <script>
