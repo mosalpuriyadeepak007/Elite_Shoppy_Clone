@@ -193,29 +193,487 @@
     </div>
 
     <div class="Mens-products">
-        <div class="left-containner">
-            <div class="filter-box">
-                <h2>Filter By Price</h2>
+    <div class="Mainflc">
+      <div class="left-containner">
+        <div class="filter-box">
+          <h2><span>Filter By</span> Price</h2>
 
-                <div class="range-slider">
-                    <div class="slider-track"></div>
-                    <div class="slider-range" id="slider-range"></div>
+          <div class="range-slider">
+            <div class="slider-track"></div>
+            <div class="slider-range" id="slider-range"></div>
 
-                    <input type="range" id="min" min="0" max="9000" value="1000">
-                    <input type="range" id="max" min="0" max="9000" value="7000">
-                </div>
+            <input type="range" id="min" min="0" max="9900" step="100" value="1000">
+            <input type="range" id="max" min="0" max="9900" step="100" value="7000">
+          </div>
 
-                <div class="value-box">
-                    <input type="text"  id="min-value">-
-                    <input type="text" id="max-value" >
-                </div>
-            </div>
-
-            <div class="category"></div>
-            <div class="community"></div>
+          <div class="value-box">
+            <span>$</span><input type="text" id="min-value">-
+            <span>$</span><input type="text" id="max-value">
+          </div>
         </div>
-        <div class="right-container"></div>
+
+        <div class="category">
+          <h4>categories</h4>
+          <ul class="category-list">
+            <li class="MensWear"><label for="Mens">
+                <span class="material-symbols-outlined">
+                  arrow_right_alt
+                </span>Men's</label>
+              <input type="checkbox" id="Mens">
+              <ul class="category-list">
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Ethnic Wear</label></li>
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Ethnic Wear</label></li>
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Casual Wear</label></li>
+              </ul>
+            </li>
+            <li class="Best-collections">
+              <label for="Best-collections"><span class="material-symbols-outlined">
+                  arrow_right_alt
+                </span>Best Collections</label>
+              <input type="checkbox" id="Best-collections">
+              <ul class="category-list">
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>New Arrivals</label>
+                    <ul class="list">
+                        <li>Shirts</li>
+                        <li>Shoes</li>
+                        <li>Pants</li>
+                        <li>SunGlasses</li>
+                    </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="Best-Offers">
+              <label for="Best_Offers">
+                <span class="material-symbols-outlined">
+                  arrow_right_alt
+                </span>Best Offers</label>
+              <input type="checkbox" id="Best_Offers">
+              <ul class="category-list">
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Summer Discount Sale</label></li>
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Exciting Offers</label></li>
+                <li><label for=""><span class="material-symbols-outlined">
+                      arrow_right_alt
+                    </span>Flat Discount</label></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="community">
+          <h4>community Poll</h4>
+          <form action="">
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio" name="community" id="c1" value="More convenient for shipping and delivery">
+                <label for="c1">More convenient for shipping and delivery</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio" name="community" id="c2" value="Lower Price">
+                <label for="c2">Lower Price</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio" name="community" id="c3" value="Track your item">
+                <label for="c3">Track your item</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio" name="community" id="c4" value="Big choice">
+                <label for="c4">Big choice</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio" name="community" id="c5" value="More color to choose">
+                <label for="c5">More color to choose</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio" name="community" id="c6" value="Secure Payment">
+                <label for="c6">Secure Payment</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio" name="community" id="c7" value="Money Back Guarantee">
+                <label for="c7">Money Back Guarantee</label>
+              </div>
+            </div>
+            <div class="c-checkbox">
+              <div class="radio">
+                <input type="radio" name="community" id="c8" value="Others">
+                <label for="c8">Others</label>
+              </div>
+            </div>
+            <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+      <div class="right-container">
+        <h2>
+          <span>Product</span> Compare(0)
+        </h2> <br />
+        <hr />
+        <div class="cl-fix">
+          <div class="cl-fixs">
+            <label for="select-filter">Sort By :</label>
+            <select name="Filter" id="select-filter">
+              <option value="">Default</option>
+              <option value="Name(A-Z)">Name(A-Z)</option>
+              <option value="Name(Z-A)">Name(Z-A)</option>
+              <option value="Price(High-Low)">Price(High-Low)</option>
+              <option value="Price(Low-High)">Price(Low-High)</option>
+              <option value="Model(A-Z)">Model(A-Z)</option>
+              <option value="Model(Z-A)">Model(Z-A)</option>
+            </select>
+          </div>
+          <div class="cl-fixs">
+            <label for="select-show">Showing :</label>
+            <select name="Show" id="select-show">
+              <option value="7">7</option>
+              <option value="14">14</option>
+              <option value="28">28</option>
+              <option value="35">35</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+
+        <div class="crsl">
+          <img src="./Images/banner2.jpg" alt="">
+          <img src="./Images/banner2 (1).jpg" alt="">
+          <img src="./Images/banner1.jpg" alt="">
+
+          <div class="Img-tracker">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="Con-col">
+          <div class="left-con">
+            <img src="./Images/bb2 (1).jpg" alt="">
+          </div>
+          <div class="right-con">
+            <h4><span>Exclusive Men's</span> Collections</h4>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+              rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+          </div>
+        </div>
+        <div class="BoxesContainer">
+          <div class="CardsContainer" id="mens">
+            <div class="ImgContainer">
+              <div class="QuickView">
+                <a href="#">Quick View</a>
+              </div>
+              <div class="flip-inner">
+
+                <div class="flip-front">
+                  <img src="./Images/m1.jpg" alt="Front">
+                </div>
+
+                <div class="flip-back">
+                  <img src="./Images/m1.jpg" alt="Back">
+                </div>
+              </div>
+            </div>
+            <a href="#">Formal Blue Shirt</a>
+            <div class="productPrice">
+              <span>$49.99</span>
+              <del>$59.99</del>
+            </div>
+            <div class="AddToCart">
+              <button>Add to cart</button>
+              <div class="BorderEffect"></div>
+            </div>
+          </div>
+          <div class="CardsContainer">
+            <div class="ImgContainer">
+              <div class="QuickView">
+                <a href="#">Quick View</a>
+              </div>
+              <div class="flip-inner">
+
+                <div class="flip-front">
+                  <img src="./Images/m2.jpg" alt="Front">
+                </div>
+
+                <div class="flip-back">
+                  <img src="./Images/m2.jpg" alt="Back">
+                </div>
+              </div>
+            </div>
+            <a href="#">Gabi Full Sleeve Sweatshirt</a>
+            <div class="productPrice">
+              <span>$49.99</span>
+              <del>$59.99</del>
+            </div>
+            <div class="AddToCart">
+              <button>Add to cart</button>
+              <div class="BorderEffect"></div>
+            </div>
+          </div>
+          <div class="CardsContainer">
+            <div class="ImgContainer">
+              <div class="QuickView">
+                <a href="#">Quick View</a>
+              </div>
+              <div class="flip-inner">
+
+                <div class="flip-front">
+                  <img src="./Images/m3.jpg" alt="Front">
+                </div>
+
+                <div class="flip-back">
+                  <img src="./Images/m3.jpg" alt="Back">
+                </div>
+              </div>
+            </div>
+            <a href="#">Dark Blue Track Pants</a>
+            <div class="productPrice">
+              <span>$85.99</span>
+              <del>$99.99</del>
+            </div>
+            <div class="AddToCart">
+              <button>Add to cart</button>
+              <div class="BorderEffect"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <div class="Container6">
+    <div class="BoxesContainer">
+              <div class="CardsContainer" id="mens">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m1.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m1.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Formal Blue Shirt</a>
+                  <div class="productPrice">
+                      <span>$49.99</span>
+                      <del>$59.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m2.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m2.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Gabi Full Sleeve Sweatshirt</a>
+                  <div class="productPrice">
+                      <span>$49.99</span>
+                      <del>$59.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m3.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m3.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Dark Blue Track Pants</a>
+                  <div class="productPrice">
+                      <span>$85.99</span>
+                      <del>$99.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m4.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m4.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Round Neck Black T-Shirt</a>
+                  <div class="productPrice">
+                      <span>$192.99</span>
+                      <del>$199.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m5.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m5.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Men's Black Jeans</a>
+                  <div class="productPrice">
+                      <span>$60.99</span>
+                      <del>$69.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m7.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m7.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Analog Watch</a>
+                  <div class="productPrice">
+                      <span>$160.99</span>
+                      <del>$199.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m6.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m6.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Formal Blue Shirt</a>
+                  <div class="productPrice">
+                      <span>$30.99 </span>
+                      <del>$59.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m8.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m8.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Party Men's Blazer</a>
+                  <div class="productPrice">
+                      <span>$260.99</span>
+                      <del>$280.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+    </div>
+  </div>
 
     <div class="Clearfix">
         <div class="clr">

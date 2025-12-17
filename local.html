@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dual Range Price Filter</title>
+  <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
   <style>
@@ -15,18 +16,13 @@
       font-family: Arial, sans-serif;
     }
 
-    .material-symbols-outlined {
-      align-items: center;
-      margin-right: 3px;
-      color: #2fdab8;
-    }
-
     /* mens.html  */
     .Mens-products {
       width: 100%;
       background-color: white;
       padding-top: 50px;
       justify-items: center;
+      padding-bottom: 50px;
     }
 
     .Mainflc {
@@ -140,6 +136,12 @@
     .category {
       margin-top: 30px;
       border: 1px solid #d2d2d2;
+    }
+
+    .category .material-symbols-outlined {
+      align-items: center;
+      margin-right: 3px;
+      color: #2fdab8;
     }
 
     .category h4 {
@@ -387,32 +389,33 @@
 
     /* Con-col */
 
-    .Con-col{
+    .Con-col {
       display: flex;
       margin-top: 40px;
       gap: 40px;
       width: 100%;
+      margin-bottom: 50px;
       /* align-items: center; */
     }
 
-    .Con-col>.left-con{
+    .Con-col>.left-con {
       width: 30%;
       height: auto;
     }
 
 
-    .Con-col>.left-con img{
+    .Con-col>.left-con img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .Con-col>.right-con{
+    .Con-col>.right-con {
       width: 60%;
       justify-content: space-around;
     }
 
-    .right-con h4{
+    .right-con h4 {
       font-family: "Open Sans", sans-serif;
       font-size: 1.2rem;
       margin-bottom: 10px;
@@ -422,17 +425,61 @@
     }
 
 
-    .right-con h4>span{
+    .right-con h4>span {
       font-weight: 700;
     }
 
-    .right-con p{
+    .right-con p {
       margin-left: auto;
       margin-top: 30px;
       font-size: 1rem;
       color: #545454;
       line-height: 1.9em;
       letter-spacing: 1.3px;
+    }
+
+    .flip-inner {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.7s;
+      transform-style: preserve-3d;
+      position: absolute;
+    }
+
+    .AddToCart {
+      position: relative;
+      width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .AddToCart>button {
+      width: 70%;
+      padding: 10px 0;
+      background-color: #2fdab8;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-left: 30px;
+    }
+
+    .AddToCart>.BorderEffect {
+      position: absolute;
+      inset: 0;
+      width: 80%;
+      margin: 20px;
+      padding: 18px 0px;
+      border: 5px solid #2fdab8;
+      transform: scale(0.9);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .AddToCart:hover>.BorderEffect {
+      transform: scale(1);
+      top: -6px;
+      padding: 22px 0px;
     }
 
     /* ============ RESPONSIVE DESIGN ============ */
@@ -473,11 +520,11 @@
         padding-bottom: 50px;
       }
 
-      .left-containner > .category,
-      .left-containner > .community {
+      .left-containner>.category,
+      .left-containner>.community {
         width: 49%;
         margin-top: 20px;
-        
+
       }
 
       .right-container {
@@ -510,7 +557,7 @@
         height: 300px;
       } */
 
-      .Con-col > .right-con p{
+      .Con-col>.right-con p {
         font-size: 0.9em;
       }
     }
@@ -535,7 +582,7 @@
         letter-spacing: 1px;
       }
 
-      .category > .category-list {
+      .category>.category-list {
         padding: 20px;
       }
 
@@ -572,7 +619,7 @@
         line-height: 1.7em;
       }
 
-      .Con-col > .left-con {
+      .Con-col>.left-con {
         height: 250px;
       }
     }
@@ -598,12 +645,12 @@
         padding: 10px;
       }
 
-      .value-box > span {
+      .value-box>span {
         font-size: 1rem;
         padding-left: 10px;
       }
 
-      .value-box > input[type=text] {
+      .value-box>input[type=text] {
         font-size: 1rem;
         width: 60px;
       }
@@ -618,19 +665,20 @@
         justify-content: space-evenly;
       }
 
-      .left-containner > .category,
-      .left-containner > .community {
+      .left-containner>.category,
+      .left-containner>.community {
         width: 80%;
         margin-top: 20px;
-        
+
       }
+
       .category h4,
       .community h4 {
         font-size: 1rem;
         padding: 8px;
       }
 
-      .category > .category-list {
+      .category>.category-list {
         padding: 15px;
       }
 
@@ -646,7 +694,7 @@
         font-size: 0.9rem;
       }
 
-      form > button {
+      form>button {
         width: 100%;
         padding: 12px;
         font-size: 1rem;
@@ -671,7 +719,7 @@
         gap: 20px;
       }
 
-      .Con-col > .left-con {
+      .Con-col>.left-con {
         height: 200px;
       }
 
@@ -703,7 +751,7 @@
 
     /* Extra Small Phones (max-width: 400px) */
     @media (max-width: 400px) {
-      .value-box > input[type=text] {
+      .value-box>input[type=text] {
         width: 50px;
         font-size: 0.9rem;
       }
@@ -712,7 +760,7 @@
         font-size: 1rem;
       }
 
-      .Con-col > .left-con {
+      .Con-col>.left-con {
         height: 180px;
       }
 
@@ -720,7 +768,7 @@
         font-size: 0.8rem;
       }
 
-      .Con-col{
+      .Con-col {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -728,12 +776,12 @@
         text-align: center;
       }
 
-      .Con-col>.left-con{
+      .Con-col>.left-con {
         width: 50%;
         height: auto;
       }
 
-      .Con-col>.right-con{
+      .Con-col>.right-con {
         width: 100%;
         height: auto;
       }
@@ -923,7 +971,300 @@
               explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
           </div>
         </div>
+        <div class="BoxesContainer">
+          <div class="CardsContainer" id="mens">
+            <div class="ImgContainer">
+              <div class="QuickView">
+                <a href="#">Quick View</a>
+              </div>
+              <div class="flip-inner">
+
+                <div class="flip-front">
+                  <img src="./Images/m1.jpg" alt="Front">
+                </div>
+
+                <div class="flip-back">
+                  <img src="./Images/m1.jpg" alt="Back">
+                </div>
+              </div>
+            </div>
+            <a href="#">Formal Blue Shirt</a>
+            <div class="productPrice">
+              <span>$49.99</span>
+              <del>$59.99</del>
+            </div>
+            <div class="AddToCart">
+              <button>Add to cart</button>
+              <div class="BorderEffect"></div>
+            </div>
+          </div>
+          <div class="CardsContainer">
+            <div class="ImgContainer">
+              <div class="QuickView">
+                <a href="#">Quick View</a>
+              </div>
+              <div class="flip-inner">
+
+                <div class="flip-front">
+                  <img src="./Images/m2.jpg" alt="Front">
+                </div>
+
+                <div class="flip-back">
+                  <img src="./Images/m2.jpg" alt="Back">
+                </div>
+              </div>
+            </div>
+            <a href="#">Gabi Full Sleeve Sweatshirt</a>
+            <div class="productPrice">
+              <span>$49.99</span>
+              <del>$59.99</del>
+            </div>
+            <div class="AddToCart">
+              <button>Add to cart</button>
+              <div class="BorderEffect"></div>
+            </div>
+          </div>
+          <div class="CardsContainer">
+            <div class="ImgContainer">
+              <div class="QuickView">
+                <a href="#">Quick View</a>
+              </div>
+              <div class="flip-inner">
+
+                <div class="flip-front">
+                  <img src="./Images/m3.jpg" alt="Front">
+                </div>
+
+                <div class="flip-back">
+                  <img src="./Images/m3.jpg" alt="Back">
+                </div>
+              </div>
+            </div>
+            <a href="#">Dark Blue Track Pants</a>
+            <div class="productPrice">
+              <span>$85.99</span>
+              <del>$99.99</del>
+            </div>
+            <div class="AddToCart">
+              <button>Add to cart</button>
+              <div class="BorderEffect"></div>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </div>
+
+  <div class="Container6">
+    <div class="BoxesContainer">
+              <div class="CardsContainer" id="mens">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m1.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m1.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Formal Blue Shirt</a>
+                  <div class="productPrice">
+                      <span>$49.99</span>
+                      <del>$59.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m2.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m2.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Gabi Full Sleeve Sweatshirt</a>
+                  <div class="productPrice">
+                      <span>$49.99</span>
+                      <del>$59.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m3.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m3.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Dark Blue Track Pants</a>
+                  <div class="productPrice">
+                      <span>$85.99</span>
+                      <del>$99.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m4.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m4.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Round Neck Black T-Shirt</a>
+                  <div class="productPrice">
+                      <span>$192.99</span>
+                      <del>$199.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m5.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m5.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Men's Black Jeans</a>
+                  <div class="productPrice">
+                      <span>$60.99</span>
+                      <del>$69.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m7.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m7.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Analog Watch</a>
+                  <div class="productPrice">
+                      <span>$160.99</span>
+                      <del>$199.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m6.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m6.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Formal Blue Shirt</a>
+                  <div class="productPrice">
+                      <span>$30.99 </span>
+                      <del>$59.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
+              <div class="CardsContainer">
+                  <div class="ImgContainer">
+                      <div class="QuickView">
+                          <a href="#">Quick View</a>
+                      </div>
+                      <div class="flip-inner">
+  
+                          <div class="flip-front">
+                              <img src="./Images/m8.jpg" alt="Front">
+                          </div>
+  
+                          <div class="flip-back">
+                              <img src="./Images/m8.jpg" alt="Back">
+                          </div>
+                      </div>
+                  </div>
+                  <a href="#">Party Men's Blazer</a>
+                  <div class="productPrice">
+                      <span>$260.99</span>
+                      <del>$280.99</del>
+                  </div>
+                  <div class="AddToCart">
+                      <button>Add to cart</button>
+                      <div class="BorderEffect"></div>
+                  </div>
+              </div>
     </div>
   </div>
 
