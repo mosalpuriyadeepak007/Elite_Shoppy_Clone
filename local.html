@@ -32,7 +32,7 @@
     .Mainflc {
       display: flex;
       width: 1200px;
-      border: 1px solid #000000;
+      /* border: 1px solid #000000; */
     }
 
 
@@ -227,21 +227,21 @@
       color: #2fdab8;
     }
 
-    .community form{
+    .community form {
       padding: 30px;
       line-height: 1.3em;
       justify-content: center;
     }
 
 
-    .radio{
+    .radio {
       display: flex;
       padding-bottom: 10px;
-      gap: 16px;
+      gap: 14px;
       align-items: center;
     }
 
-    .radio input[type="radio"]{
+    .radio input[type="radio"] {
       appearance: none;
       width: 12px;
       height: 12px;
@@ -251,11 +251,17 @@
       outline: 2px solid #2fdab8;
     }
 
-    .radio input[type="radio"]:checked{
+    .radio input[type="radio"]:checked {
       background-color: rgb(0, 0, 0);
     }
 
-    form>button{
+    .radio label {
+      cursor: pointer;
+      width: 90%;
+      color: #545454;
+    }
+
+    form>button {
       margin-top: 10px;
       padding: 8px 20px;
       background-color: #000000;
@@ -268,10 +274,15 @@
 
 
 
+    /* Right Container  of CRLS */
+
     .right-container {
-      flex-grow: 1;
-      padding-left: 20px;
+      /* flex-grow: 2; */
+      width: calc(100% - 400px);
+      margin-left: 20px;
+      margin-top: 10px;
     }
+
     .cl-fix {
       display: flex;
       justify-content: flex-start;
@@ -297,59 +308,436 @@
       padding: 5px;
       font-size: 1rem;
       border: 1px solid #d2d2d2;
-      border-radius: 5px;
       cursor: pointer;
       color: #545454;
     }
 
-    .crsl{
+    .crsl {
+      position: relative;
       margin-top: 20px;
-      max-width: 600px;
+      width: 100%;
       height: 300px;
       overflow: hidden;
     }
 
-    .crsl-list{
+    .crsl img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .crsl img.active {
+      opacity: 1;
+    }
+
+    .Img-tracker {
+      position: absolute;
+      bottom: 30px;
+      left: 10%;
+      transform: translateX(-50%);
       display: flex;
-      width: 300%;
-      height: 100%;
-      animation: scroll 15s linear infinite;
+      gap: 10px;
+
     }
 
-    .crsl-list>li{
-      width: 100%;
-      height: 100%;
-      list-style: none;
-      align-items: center;
-      justify-content: center;
+    .Img-tracker span {
+      width: 12px;
+      height: 12px;
+      background-color: rgba(255, 255, 255, 0.747);
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-
-    .crsl-list>li img{
-      width: 100%;
-      height: 100%;
-      object-fit:cover;
+    .Img-tracker span:hover {
+      background-color: rgba(255, 255, 255, 0.8);
     }
 
-    @keyframes scroll {
+    .Img-tracker span.active {
+      background-color: #2fdab8;
+    }
+
+    @keyframes fade {
       0% {
-        transform: translateX(0);
+        opacity: 0;
       }
 
-      50% {
-        transform: translateX(100%);
+      10% {
+        opacity: 1;
       }
 
-      75% {
-        transform: translateX(200%);
+      30% {
+        opacity: 1;
       }
 
-      95% {
-        transform: translateX(300%);
+      40% {
+        opacity: 0;
       }
+
       100% {
-        transform: translateX(0%);
+        opacity: 0;
       }
+    }
+
+
+    /* Con-col */
+
+    .Con-col{
+      display: flex;
+      margin-top: 40px;
+      gap: 40px;
+      width: 100%;
+      /* align-items: center; */
+    }
+
+    .Con-col>.left-con{
+      width: 30%;
+      height: auto;
+    }
+
+
+    .Con-col>.left-con img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .Con-col>.right-con{
+      width: 60%;
+      justify-content: space-around;
+    }
+
+    .right-con h4{
+      font-family: "Open Sans", sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: 100;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+
+    .right-con h4>span{
+      font-weight: 700;
+    }
+
+    .right-con p{
+      margin-left: auto;
+      margin-top: 30px;
+      font-size: 1rem;
+      color: #545454;
+      line-height: 1.9em;
+      letter-spacing: 1.3px;
+    }
+
+    /* ============ RESPONSIVE DESIGN ============ */
+
+    /* Large Tablets (max-width: 1200px) */
+    @media (max-width: 1200px) {
+      .Mainflc {
+        width: 100%;
+        padding: 0 20px;
+      }
+
+      .right-container {
+        width: calc(100% - 320px);
+        margin-left: 15px;
+      }
+
+      .left-containner {
+        width: 300px;
+      }
+    }
+
+    /* Tablets (max-width: 992px) */
+    @media (max-width: 992px) {
+      .Mainflc {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 80px;
+      }
+
+      .left-containner {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 30px;
+        gap: 10px;
+        justify-content: space-evenly;
+        padding-bottom: 50px;
+      }
+
+      .left-containner > .category,
+      .left-containner > .community {
+        width: 49%;
+        margin-top: 20px;
+        
+      }
+
+      .right-container {
+        width: 100%;
+        margin-left: 0;
+        order: 2;
+      }
+
+      .filter-box {
+        width: 100%;
+      }
+
+      .cl-fix {
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .Con-col {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+      }
+
+      /* .Con-col > .right-con,.left-con {
+        width: 49%;
+      } */
+
+      /* .Con-col > .left-con {
+        width: 100%;
+        height: 300px;
+      } */
+
+      .Con-col > .right-con p{
+        font-size: 0.9em;
+      }
+    }
+
+    /* Small Tablets / Large Phones (max-width: 768px) */
+    @media (max-width: 768px) {
+      .Mens-products {
+        padding-top: 30px;
+      }
+
+      .Mainflc {
+        padding: 0 10px;
+      }
+
+      .filter-box h2 {
+        font-size: 1.3rem;
+      }
+
+      .category h4,
+      .community h4 {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+      }
+
+      .category > .category-list {
+        padding: 20px;
+      }
+
+      .community form {
+        padding: 20px;
+      }
+
+      .cl-fix {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+      }
+
+      .cl-fixs {
+        width: 100%;
+        /* justify-content: space-between; */
+      }
+
+      .cl-fixs select {
+        flex-grow: 1;
+        max-width: 200px;
+      }
+
+      .crsl {
+        height: 200px;
+      }
+
+      .right-con h4 {
+        font-size: 1rem;
+      }
+
+      .right-con p {
+        font-size: 0.9rem;
+        line-height: 1.7em;
+      }
+
+      .Con-col > .left-con {
+        height: 250px;
+      }
+    }
+
+    /* Mobile Phones (max-width: 576px) */
+    @media (max-width: 576px) {
+      .Mens-products {
+        padding-top: 20px;
+      }
+
+      .Mainflc {
+        padding: 0 5px;
+      }
+
+      .filter-box h2 {
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+      }
+
+      .value-box {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .value-box > span {
+        font-size: 1rem;
+        padding-left: 10px;
+      }
+
+      .value-box > input[type=text] {
+        font-size: 1rem;
+        width: 60px;
+      }
+
+      .left-containner {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        width: 100%;
+        margin-top: 30px;
+        gap: 10px;
+        justify-content: space-evenly;
+      }
+
+      .left-containner > .category,
+      .left-containner > .community {
+        width: 80%;
+        margin-top: 20px;
+        
+      }
+      .category h4,
+      .community h4 {
+        font-size: 1rem;
+        padding: 8px;
+      }
+
+      .category > .category-list {
+        padding: 15px;
+      }
+
+      .category-list ul {
+        padding-left: 15px;
+      }
+
+      .radio {
+        gap: 10px;
+      }
+
+      .radio label {
+        font-size: 0.9rem;
+      }
+
+      form > button {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+      }
+
+      .crsl {
+        height: 180px;
+        margin-top: 15px;
+      }
+
+      .Img-tracker {
+        bottom: 15px;
+      }
+
+      .Img-tracker span {
+        width: 10px;
+        height: 10px;
+      }
+
+      .Con-col {
+        margin-top: 25px;
+        gap: 20px;
+      }
+
+      .Con-col > .left-con {
+        height: 200px;
+      }
+
+      .right-con h4 {
+        font-size: 0.95rem;
+        letter-spacing: 1px;
+      }
+
+      .right-con p {
+        font-size: 0.85rem;
+        margin-top: 15px;
+        line-height: 1.6em;
+        letter-spacing: 1px;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
+
+      .cl-fixs label {
+        font-size: 0.95rem;
+      }
+
+      .cl-fixs select {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+    }
+
+    /* Extra Small Phones (max-width: 400px) */
+    @media (max-width: 400px) {
+      .value-box > input[type=text] {
+        width: 50px;
+        font-size: 0.9rem;
+      }
+
+      .filter-box h2 {
+        font-size: 1rem;
+      }
+
+      .Con-col > .left-con {
+        height: 180px;
+      }
+
+      .right-con p {
+        font-size: 0.8rem;
+      }
+
+      .Con-col{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .Con-col>.left-con{
+        width: 50%;
+        height: auto;
+      }
+
+      .Con-col>.right-con{
+        width: 100%;
+        height: auto;
+      }
+
     }
   </style>
 </head>
@@ -361,21 +749,21 @@
       <div class="left-containner">
         <div class="filter-box">
           <h2><span>Filter By</span> Price</h2>
-  
+
           <div class="range-slider">
             <div class="slider-track"></div>
             <div class="slider-range" id="slider-range"></div>
-  
+
             <input type="range" id="min" min="0" max="9900" step="100" value="1000">
             <input type="range" id="max" min="0" max="9900" step="100" value="7000">
           </div>
-  
+
           <div class="value-box">
             <span>$</span><input type="text" id="min-value">-
             <span>$</span><input type="text" id="max-value">
           </div>
         </div>
-  
+
         <div class="category">
           <h4>categories</h4>
           <ul class="category-list">
@@ -432,49 +820,49 @@
           <form action="">
             <div class="c-checkbox">
               <div class="radio">
-                <input type="radio"name="community" id="c1" value="More convenient for shipping and delivery">
+                <input type="radio" name="community" id="c1" value="More convenient for shipping and delivery">
                 <label for="c1">More convenient for shipping and delivery</label>
               </div>
             </div>
             <div class="c-checkbox">
               <div class="radio">
-                <input type="radio"name="community" id="c2" value="Lower Price">
+                <input type="radio" name="community" id="c2" value="Lower Price">
                 <label for="c2">Lower Price</label>
               </div>
             </div>
             <div class="c-checkbox">
               <div class="radio">
-                <input type="radio"name="community" id="c3" value="Track your item">
+                <input type="radio" name="community" id="c3" value="Track your item">
                 <label for="c3">Track your item</label>
               </div>
             </div>
             <div class="c-checkbox">
               <div class="radio">
-                <input type="radio"name="community" id="c4" value="Big choice">
+                <input type="radio" name="community" id="c4" value="Big choice">
                 <label for="c4">Big choice</label>
               </div>
             </div>
             <div class="c-checkbox">
               <div class="radio">
-                <input type="radio"name="community" id="c5" value="More color to choose">
+                <input type="radio" name="community" id="c5" value="More color to choose">
                 <label for="c5">More color to choose</label>
               </div>
             </div>
             <div class="c-checkbox">
               <div class="radio">
-                <input type="radio"name="community" id="c6" value="Secure Payment">
+                <input type="radio" name="community" id="c6" value="Secure Payment">
                 <label for="c6">Secure Payment</label>
               </div>
             </div>
             <div class="c-checkbox">
               <div class="radio">
-                <input type="radio"name="community" id="c7" value="Money Back Guarantee">
+                <input type="radio" name="community" id="c7" value="Money Back Guarantee">
                 <label for="c7">Money Back Guarantee</label>
               </div>
             </div>
             <div class="c-checkbox">
               <div class="radio">
-                <input type="radio"name="community" id="c8" value="Others">
+                <input type="radio" name="community" id="c8" value="Others">
                 <label for="c8">Others</label>
               </div>
             </div>
@@ -485,12 +873,11 @@
       <div class="right-container">
         <h2>
           <span>Product</span> Compare(0)
-        </h2> <br/>
+        </h2> <br />
         <hr />
-
         <div class="cl-fix">
           <div class="cl-fixs">
-            <label for="select-filter">Sort By :</label> 
+            <label for="select-filter">Sort By :</label>
             <select name="Filter" id="select-filter">
               <option value="">Default</option>
               <option value="Name(A-Z)">Name(A-Z)</option>
@@ -511,14 +898,30 @@
             </select>
           </div>
         </div>
-        <hr/>
+        <hr />
 
         <div class="crsl">
-          <ul class="crsl-list">
-            <li><img src="./Images/banner6.jpg" alt=""></li>
-            <li><img src="./Images/banner2 (1).jpg" alt=""></li>
-            <li><img src="./Images/banner3.jpg" alt=""></li>
-          </ul>
+          <img src="./Images/banner2.jpg" alt="">
+          <img src="./Images/banner2 (1).jpg" alt="">
+          <img src="./Images/banner1.jpg" alt="">
+
+          <div class="Img-tracker">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div class="Con-col">
+          <div class="left-con">
+            <img src="./Images/bb2 (1).jpg" alt="">
+          </div>
+          <div class="right-con">
+            <h4><span>Exclusive Men's</span> Collections</h4>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
+              rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+              explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -554,6 +957,49 @@
     maxSlider.addEventListener("input", updateSlider);
 
     updateSlider();
+
+    // Carousel functionality
+    const images = document.querySelectorAll('.crsl img');
+    const dots = document.querySelectorAll('.Img-tracker span');
+    let currentIndex = 0;
+    let autoSlideInterval;
+
+    function showSlide(index) {
+      // Remove active class from all
+      images.forEach(img => img.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+
+      // Add active class to current
+      images[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentIndex = index;
+    }
+
+    function nextSlide() {
+      let next = (currentIndex + 1) % images.length;
+      showSlide(next);
+    }
+
+    function startAutoSlide() {
+      autoSlideInterval = setInterval(nextSlide, 3000);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      startAutoSlide();
+    }
+
+    // Click on dots to navigate
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        resetAutoSlide();
+      });
+    });
+
+    // Initialize
+    showSlide(0);
+    startAutoSlide();
   </script>
 
 </body>
