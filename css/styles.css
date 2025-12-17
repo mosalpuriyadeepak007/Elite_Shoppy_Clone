@@ -1993,7 +1993,7 @@ label {
   background-color: white;
   padding-top: 50px;
   justify-items: center;
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 
 .Mainflc {
@@ -2153,7 +2153,7 @@ label {
   display: none;
   list-style: none;
   padding-left: 30px;
-  line-height: 1.5em;
+  line-height: 1.8em;
 }
 
 .category-list>ul li {
@@ -2183,6 +2183,26 @@ label {
   display: block;
 }
 
+#N-Arrvl {
+  display: none;
+}
+
+.N-Arrvl {
+  display: none;
+  color: #545454;
+  font-weight: 100;
+  padding-top: 3px;
+  padding-bottom: 10px;
+}
+.N-Arrvl li{
+  list-style: none;
+  padding-top: 3px;
+  line-height: 1.5em;
+}
+
+#N-Arrvl:checked~.N-Arrvl {
+  display: block;
+}
 
 .community {
   margin-top: 30px;
@@ -2254,15 +2274,26 @@ form>button {
   /* flex-grow: 2; */
   width: calc(100% - 400px);
   margin-left: 20px;
-  /* margin-top: 10px; */
+  margin-top: 20px;
 }
 
+.right-container h2 {
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 100;
+  letter-spacing: 1.3px;
+  margin: 0;
+}
+
+.right-container h2>span {
+  font-weight: 700;
+}
 .cl-fix {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 70px;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .cl-fixs {
@@ -2288,7 +2319,7 @@ form>button {
 
 .crsl {
   position: relative;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 100%;
   height: 300px;
   overflow: hidden;
@@ -2363,10 +2394,10 @@ form>button {
 
 .Con-col {
   display: flex;
-  margin-top: 40px;
+  margin-top: 20px;
   gap: 40px;
   width: 100%;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
   /* align-items: center; */
 }
 
@@ -2681,6 +2712,13 @@ form>button {
 
 /* Extra Small Phones (max-width: 400px) */
 @media (max-width: 400px) {
+
+  .Mens-products {
+    padding:0px;
+  }
+  .Mainflc {
+    padding: 0 2px;
+  }
   .value-box>input[type=text] {
     width: 50px;
     font-size: 0.9rem;
@@ -2702,7 +2740,6 @@ form>button {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
     text-align: center;
   }
 
