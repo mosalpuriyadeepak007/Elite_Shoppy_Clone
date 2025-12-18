@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dual Range Price Filter</title>
-  <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
   <style>
@@ -16,1333 +15,387 @@
       font-family: Arial, sans-serif;
     }
 
-    /* mens.html  */
-    .Mens-products {
-      width: 100%;
-      background-color: white;
-      padding-top: 50px;
-      justify-items: center;
-      padding-bottom: 50px;
-    }
-
-    .Mainflc {
-      display: flex;
-      width: 1200px;
-      /* border: 1px solid #000000; */
-    }
-
-
-    .left-containner {
-      height: 100%;
-      width: 350px;
-      /* border: 1px solid black; */
-      display: flex;
-      flex-direction: column;
-    }
-
-    .filter-box {
-      width: calc(100%);
-      /* padding: 20px; */
-      align-items: center;
-      justify-content: center;
-    }
-
-    .filter-box h2 {
-      margin-bottom: 5px;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 1.6rem;
-      letter-spacing: 1.3px;
-      font-weight: 100;
-    }
-
-    .filter-box h2>span {
-      font-weight: 700;
-    }
-
-
-
-    .range-slider {
-      position: relative;
-      height: 40px;
-    }
-
-    .range-slider input[type="range"] {
-      position: absolute;
-      width: 100%;
-      pointer-events: none;
-      -webkit-appearance: none;
-      background: none;
-    }
-
-    .range-slider input[type="range"]::-webkit-slider-thumb {
-      pointer-events: auto;
-      -webkit-appearance: none;
-      width: 13px;
-      height: 13px;
-      background: #ff3b3b;
-      border-radius: 50%;
-      cursor: pointer;
-      margin-top: 13px;
-    }
-
-    /* Track line */
-    .slider-track {
-      position: absolute;
-      height: 5px;
-      background: #d3d3d3;
-      width: 100%;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .slider-range {
-      position: absolute;
-      height: 5px;
-      background: #000000;
-      top: 50%;
-      transform: translateY(-50%);
-      border-radius: 50px;
-    }
-
-    .value-box {
-      margin-top: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 1px solid rgba(0, 0, 0, 0.352);
-      padding: 5px;
-    }
-
-    .value-box>span {
-      font-size: 1.2rem;
-      font-weight: 500;
-      padding-left: 20px;
-    }
-
-    .value-box>input[type=text] {
-      font-size: large;
-      font-weight: 500;
-      width: 70px;
-      border: none;
-      box-sizing: border-box;
-    }
-
-    .value-box>input[type=text]:focus {
-      border: none;
-      outline: none;
-    }
-
-    .category {
-      margin-top: 30px;
-      border: 1px solid #d2d2d2;
-    }
-
-    .category .material-symbols-outlined {
-      align-items: center;
-      margin-right: 3px;
-      color: #2fdab8;
-    }
-
-    .category h4 {
-      margin: 0;
-      text-align: center;
-      padding: 10px;
-      border-bottom: 1px solid #d2d2d2;
-      background-color: #f7f7f7;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 1.4rem;
-      color: #2fdab8;
-
-    }
-
-    .category>.category-list {
-      justify-content: center;
-      list-style: none;
-      font-weight: 600;
-      padding: 30px;
-      color: #545454;
-    }
-
-    label {
-      cursor: pointer;
-      align-items: center;
-      display: flex;
-    }
-
-
-    #Mens {
-      display: none;
-    }
-
-
-    .category-list ul {
-      display: none;
-      list-style: none;
-      padding-left: 30px;
-      line-height: 1.5em;
-    }
-
-    .category-list ul li {
-      align-items: center;
-      cursor: pointer;
-      font-weight: 600;
-      padding: 5px;
-    }
-
-    #Mens:checked~.category-list {
-      display: block;
-    }
-
-    #Best-collections {
-      display: none;
-    }
-
-    #Best-collections:checked~.category-list {
-      display: block;
-    }
-
-    #Best_Offers {
-      display: none;
-    }
-
-    #Best_Offers:checked~.category-list {
-      display: block;
-    }
-
-
-    .community {
-      margin-top: 30px;
-      border: 1px solid #d2d2d2;
-    }
-
-    .community h4 {
-      margin: 0;
-      text-align: center;
-      padding: 10px;
-      border-bottom: 1px solid #d2d2d2;
-      background-color: #f7f7f7;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 1.4rem;
-      color: #2fdab8;
-    }
-
-    .community form {
-      padding: 30px;
-      line-height: 1.3em;
-      justify-content: center;
-    }
-
-
-    .radio {
-      display: flex;
-      padding-bottom: 10px;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .radio input[type="radio"] {
-      appearance: none;
-      width: 12px;
-      height: 12px;
-      background-color: rgb(255, 255, 255);
-      border-radius: 50%;
-      cursor: pointer;
-      outline: 2px solid #2fdab8;
-    }
-
-    .radio input[type="radio"]:checked {
-      background-color: rgb(0, 0, 0);
-    }
-
-    .radio label {
-      cursor: pointer;
-      width: 90%;
-      color: #545454;
-    }
-
-    form>button {
-      margin-top: 10px;
-      padding: 8px 20px;
-      background-color: #000000;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-
-
-    /* Right Container  of CRLS */
-
-    .right-container {
-      /* flex-grow: 2; */
-      width: calc(100% - 400px);
-      margin-left: 20px;
-      margin-top: 10px;
-    }
-
-    .cl-fix {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 70px;
-      padding: 20px 0;
-    }
-
-    .cl-fixs {
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .cl-fixs label {
-      font-size: 1.1rem;
-      font-weight: 100;
-      color: #000000;
-    }
-
-    .cl-fixs select {
-      padding: 5px;
-      font-size: 1rem;
-      border: 1px solid #d2d2d2;
-      cursor: pointer;
-      color: #545454;
-    }
-
-    .crsl {
-      position: relative;
-      margin-top: 20px;
-      width: 100%;
-      height: 300px;
-      overflow: hidden;
-    }
-
-    .crsl img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-
-    .crsl img.active {
-      opacity: 1;
-    }
-
-    .Img-tracker {
-      position: absolute;
-      bottom: 30px;
-      left: 10%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-
-    }
-
-    .Img-tracker span {
-      width: 12px;
-      height: 12px;
-      background-color: rgba(255, 255, 255, 0.747);
-      border-radius: 50%;
-      display: inline-block;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .Img-tracker span:hover {
-      background-color: rgba(255, 255, 255, 0.8);
-    }
-
-    .Img-tracker span.active {
-      background-color: #2fdab8;
-    }
-
-    @keyframes fade {
-      0% {
-        opacity: 0;
-      }
-
-      10% {
-        opacity: 1;
-      }
-
-      30% {
-        opacity: 1;
-      }
-
-      40% {
-        opacity: 0;
-      }
-
-      100% {
-        opacity: 0;
-      }
-    }
-
-
-    /* Con-col */
-
-    .Con-col {
-      display: flex;
-      margin-top: 40px;
-      gap: 40px;
-      width: 100%;
-      margin-bottom: 50px;
-      /* align-items: center; */
-    }
-
-    .Con-col>.left-con {
-      width: 30%;
-      height: auto;
-    }
-
-
-    .Con-col>.left-con img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .Con-col>.right-con {
-      width: 60%;
-      justify-content: space-around;
-    }
-
-    .right-con h4 {
-      font-family: "Open Sans", sans-serif;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-      font-weight: 100;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-    }
-
-
-    .right-con h4>span {
-      font-weight: 700;
-    }
-
-    .right-con p {
-      margin-left: auto;
-      margin-top: 30px;
-      font-size: 1rem;
-      color: #545454;
-      line-height: 1.9em;
-      letter-spacing: 1.3px;
-    }
-
-    .flip-inner {
-      width: 100%;
-      height: 100%;
-      transition: transform 0.7s;
-      transform-style: preserve-3d;
-      position: absolute;
-    }
-
-    .AddToCart {
-      position: relative;
-      width: 100%;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .AddToCart>button {
-      width: 70%;
-      padding: 10px 0;
-      background-color: #2fdab8;
-      border: none;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-      margin-left: 30px;
-    }
-
-    .AddToCart>.BorderEffect {
-      position: absolute;
-      inset: 0;
-      width: 80%;
-      margin: 20px;
-      padding: 18px 0px;
-      border: 5px solid #2fdab8;
-      transform: scale(0.9);
-      transition: all 0.3s ease;
-      pointer-events: none;
-    }
-
-    .AddToCart:hover>.BorderEffect {
-      transform: scale(1);
-      top: -6px;
-      padding: 22px 0px;
-    }
-
-    /* ============ RESPONSIVE DESIGN ============ */
-
-    /* Large Tablets (max-width: 1200px) */
-    @media (max-width: 1200px) {
-      .Mainflc {
-        width: 100%;
-        padding: 0 20px;
-      }
-
-      .right-container {
-        width: calc(100% - 320px);
-        margin-left: 15px;
-      }
-
-      .left-containner {
-        width: 300px;
-      }
-    }
-
-    /* Tablets (max-width: 992px) */
-    @media (max-width: 992px) {
-      .Mainflc {
-        flex-direction: column;
-        width: 100%;
-        padding: 0 80px;
-      }
-
-      .left-containner {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        width: 100%;
-        margin-top: 30px;
-        gap: 10px;
-        justify-content: space-evenly;
-        padding-bottom: 50px;
-      }
-
-      .left-containner>.category,
-      .left-containner>.community {
-        width: 49%;
-        margin-top: 20px;
-
-      }
-
-      .right-container {
-        width: 100%;
-        margin-left: 0;
-        order: 2;
-      }
-
-      .filter-box {
-        width: 100%;
-      }
-
-      .cl-fix {
-        flex-wrap: wrap;
-        gap: 20px;
-      }
-
-      .Con-col {
-        display: flex;
-        flex-direction: row;
-        gap: 20px;
-      }
-
-      /* .Con-col > .right-con,.left-con {
-        width: 49%;
-      } */
-
-      /* .Con-col > .left-con {
-        width: 100%;
-        height: 300px;
-      } */
-
-      .Con-col>.right-con p {
-        font-size: 0.9em;
-      }
-    }
-
-    /* Small Tablets / Large Phones (max-width: 768px) */
-    @media (max-width: 768px) {
-      .Mens-products {
-        padding-top: 30px;
-      }
-
-      .Mainflc {
-        padding: 0 10px;
-      }
-
-      .filter-box h2 {
-        font-size: 1.3rem;
-      }
-
-      .category h4,
-      .community h4 {
-        font-size: 1.2rem;
-        letter-spacing: 1px;
-      }
-
-      .category>.category-list {
-        padding: 20px;
-      }
-
-      .community form {
-        padding: 20px;
-      }
-
-      .cl-fix {
-        flex-direction: column;
-        gap: 15px;
-        align-items: flex-start;
-      }
-
-      .cl-fixs {
-        width: 100%;
-        /* justify-content: space-between; */
-      }
-
-      .cl-fixs select {
-        flex-grow: 1;
-        max-width: 200px;
-      }
-
-      .crsl {
-        height: 200px;
-      }
-
-      .right-con h4 {
-        font-size: 1rem;
-      }
-
-      .right-con p {
-        font-size: 0.9rem;
-        line-height: 1.7em;
-      }
-
-      .Con-col>.left-con {
-        height: 250px;
-      }
-    }
-
-    /* Mobile Phones (max-width: 576px) */
-    @media (max-width: 576px) {
-      .Mens-products {
-        padding-top: 20px;
-      }
-
-      .Mainflc {
-        padding: 0 5px;
-      }
-
-      .filter-box h2 {
-        font-size: 1.1rem;
-        letter-spacing: 0.5px;
-      }
-
-      .value-box {
-        flex-wrap: wrap;
-        gap: 10px;
-        padding: 10px;
-      }
-
-      .value-box>span {
-        font-size: 1rem;
-        padding-left: 10px;
-      }
-
-      .value-box>input[type=text] {
-        font-size: 1rem;
-        width: 60px;
-      }
-
-      .left-containner {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        width: 100%;
-        margin-top: 30px;
-        gap: 10px;
-        justify-content: space-evenly;
-      }
-
-      .left-containner>.category,
-      .left-containner>.community {
-        width: 80%;
-        margin-top: 20px;
-
-      }
-
-      .category h4,
-      .community h4 {
-        font-size: 1rem;
-        padding: 8px;
-      }
-
-      .category>.category-list {
-        padding: 15px;
-      }
-
-      .category-list ul {
-        padding-left: 15px;
-      }
-
-      .radio {
-        gap: 10px;
-      }
-
-      .radio label {
-        font-size: 0.9rem;
-      }
-
-      form>button {
-        width: 100%;
-        padding: 12px;
-        font-size: 1rem;
-      }
-
-      .crsl {
-        height: 180px;
-        margin-top: 15px;
-      }
-
-      .Img-tracker {
-        bottom: 15px;
-      }
-
-      .Img-tracker span {
-        width: 10px;
-        height: 10px;
-      }
-
-      .Con-col {
-        margin-top: 25px;
-        gap: 20px;
-      }
-
-      .Con-col>.left-con {
-        height: 200px;
-      }
-
-      .right-con h4 {
-        font-size: 0.95rem;
-        letter-spacing: 1px;
-      }
-
-      .right-con p {
-        font-size: 0.85rem;
-        margin-top: 15px;
-        line-height: 1.6em;
-        letter-spacing: 1px;
-      }
-
-      h2 {
-        font-size: 1.2rem;
-      }
-
-      .cl-fixs label {
-        font-size: 0.95rem;
-      }
-
-      .cl-fixs select {
-        font-size: 0.9rem;
-        padding: 8px;
-      }
-    }
-
-    /* Extra Small Phones (max-width: 400px) */
-    @media (max-width: 400px) {
-      .value-box>input[type=text] {
-        width: 50px;
-        font-size: 0.9rem;
-      }
-
-      .filter-box h2 {
-        font-size: 1rem;
-      }
-
-      .Con-col>.left-con {
-        height: 180px;
-      }
-
-      .right-con p {
-        font-size: 0.8rem;
-      }
-
-      .Con-col {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 20px;
-        text-align: center;
-      }
-
-      .Con-col>.left-con {
-        width: 50%;
-        height: auto;
-      }
-
-      .Con-col>.right-con {
-        width: 100%;
-        height: auto;
-      }
-
-    }
+    
+/* Container 4 */
+
+.container4 {
+  display: flex;
+  flex-wrap: wrap;
+  height: 500px;
+  /* gap: 1px; */
+  background-color: #2fdab8;
+  align-items: center;
+}
+
+
+.Card1 {
+  width: 50%;
+  height: 100%;
+}
+
+
+.Card1>img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+.Card2 {
+  display: flex;
+  width: 650px;
+  height: 350px;
+  margin: 20px 1px;
+  background-color: aliceblue;
+  overflow: hidden;
+  align-items: center;
+  box-shadow: 5px 0px 10px #19a98c;
+  padding: 10px;
+}
+
+.shedule {
+  align-items: center;
+  padding: 20px;
+  padding-top: 20px;
+}
+
+
+.shedule h3 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.shedule h3>span {
+  color: #fc636b;
+}
+
+.shedule p {
+  margin: 1em 0 2em;
+  color: #545454;
+  line-height: 2em;
+  padding: 0;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.counter>.Counter {
+  margin-right: 10px;
+  font-size: 25px;
+  justify-content: center;
+  text-align: center;
+}
+
+.Counter>h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 100;
+}
+
+.Counter>h5 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: xx-large;
+}
+
+.Counter span {
+  font-size: 1.5em;
+  color: #2fdab8;
+}
+
+@media (min-width:960px) and (max-width:1286px) {
+  .container4 {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    /* gap: 1px; */
+    background-color: aquamarine;
+    align-items: center;
+    /* justify-content: space-around; */
+    /* padding: 10px; */
+  }
+
+
+  .Card1 {
+    width: 50%;
+    height: 500px;
+  }
+
+  .Card1>img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+  }
+
+  .Card2 {
+    height: auto;
+    width: 40%;
+  }
+}
+
+
+@media (max-width: 960px) {
+
+  /* container 1 */
+
+  .container1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(100%-50px);
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .container1>.serch-container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .serch-container>input {
+    width: 80%;
+  }
+
+
+  /* container 4 */
+  .container4 {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    /* gap: 1px; */
+    background-color: aquamarine;
+    align-items: center;
+    justify-content: space-around;
+    /* padding: 10px; */
+  }
+
+
+  .Card1 {
+    width: 100%;
+    height: 500px;
+  }
+
+  .Card1>img {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+  }
+
+  .Card2 {
+    margin: 10px;
+    height: auto;
+  }
+}
+
+
+/* Container 4 */
+
+
+.bannerHead {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3em;
+  font-weight: 100;
+  color: #000000be;
+  letter-spacing: 1px;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 50px;
+}
+
+#B01 {
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+.Container4 {
+  display: flex;
+  padding: 20px;
+  padding-bottom: 60px;
+  align-items: center;
+  /* border: 1px solid black; */
+  margin: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 100%;
+  background-color: #ffffff;
+}
+
+/* LEFT BIG BANNER */
+.bannerContainer1 {
+  position: relative;
+  height: 545px;
+  width: 400px;
+  background-image: url("../images/bb1.jpg");
+  background-size: 110% 100%;
+  background-position-x: -40px;
+  transition: background-position 0.5s ease-in-out;
+  /* border-radius: 10px; */
+  background-repeat: no-repeat;
+  margin-left: auto;
+  box-shadow: inset 0 0 600px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+/* RIGHT SIDE 2 SMALL CARDS */
+.bannerContainer2 {
+  display: flex;
+  gap: 20px;
+  width: 500px;
+  height: 90%;
+  /* padding: 10px; */
+  flex-wrap: wrap;
+  margin-right: auto;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid #000000; */
+}
+
+.bannerContainer2>.cardContainer {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  /* border-radius: 10px; */
+  background-size: cover;
+  background-position-x: -40px;
+  background-size: 110% 100%;
+  background-repeat: no-repeat;
+  transition: background-position-x 1s ease-in-out;
+  box-shadow: inset 0 0 400px rgba(0, 0, 0, 0.5);
+
+  padding: 20px;
+}
+
+.cardContainer:nth-child(1) {
+  height: 240px;
+  background-image: url("../Images/Bannner7.jpg");
+}
+
+.cardContainer:nth-child(2) {
+  height: 240px;
+  background-image: url("../Images/card1.jpg");
+}
+
+
+.bannerContainer1:hover {
+  background-position-x: 0px;
+}
+
+
+.cardContainer:hover {
+  background-position-x: 0px;
+}
+
+
+.bannerContainer1>.figcaption {
+  display: none;
+  position: absolute;
+  height: 90%;
+  width: 80%;
+  margin-left: 10px;
+  border: 5px solid white;
+  transform: translateX(10px);
+}
+
+.bannerContainer1:hover>.figcaption {
+  display: block;
+  transition: display 5s ease;
+}
+
+.bannerContainer1>.figcaption p {
+  color: rgba(240, 248, 255, 0.79);
+  text-align: end;
+  margin-top: 40%;
+  margin-right: 18px;
+  font-size: 16px;
+  /* text-transform: uppercase; */
+  letter-spacing: 5px;
+}
+
+
+.bannerContainer1 h1 {
+  margin-left: 60%;
+  margin-top: 20%;
+  color: aliceblue;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 100;
+
+}
+
+.bannerContainer1 h1::first-letter {
+  color: red;
+}
+
+
+
+.cardContainer>.figcaption {
+  display: none;
+  position: absolute;
+  height: 200px;
+  width: 90%;
+  border: 5px solid white;
+  transform: translateX(10px);
+}
+
+.cardContainer:hover>.figcaption {
+  display: block;
+  transition: display 5s ease;
+}
+
+.cardContainer>h1 {
+  margin-top: 40px;
+  margin-left: 75%;
+  color: rgba(240, 248, 255, 0.8);
+  text-transform: uppercase;
+}
+
+.cardContainer>h1::first-letter {
+  color: red;
+}
+
+.cardContainer>.figcaption p {
+  color: rgba(240, 248, 255, 0.79);
+  text-align: end;
+  margin-top: 20%;
+  margin-right: 18px;
+  font-size: 16px;
+  /* text-transform: uppercase; */
+  letter-spacing: 5px;
+}
+
   </style>
 </head>
 
 <body>
-
-  <div class="Mens-products">
-    <div class="Mainflc">
-      <div class="left-containner">
-        <div class="filter-box">
-          <h2><span>Filter By</span> Price</h2>
-
-          <div class="range-slider">
-            <div class="slider-track"></div>
-            <div class="slider-range" id="slider-range"></div>
-
-            <input type="range" id="min" min="0" max="9900" step="100" value="1000">
-            <input type="range" id="max" min="0" max="9900" step="100" value="7000">
-          </div>
-
-          <div class="value-box">
-            <span>$</span><input type="text" id="min-value">-
-            <span>$</span><input type="text" id="max-value">
-          </div>
+  <div class="container3">
+        <div class="box" style="background-image: url(./Images/card1.jpg);">
+            <div class="figcaption">
+                <p>New Arrivals</p>
+            </div>
+            <h1>FALL AHEAD</h1>
         </div>
 
-        <div class="category">
-          <h4>categories</h4>
-          <ul class="category-list">
-            <li class="MensWear"><label for="Mens">
-                <span class="material-symbols-outlined">
-                  arrow_right_alt
-                </span>Men's</label>
-              <input type="checkbox" id="Mens">
-              <ul class="category-list">
-                <li><label for=""><span class="material-symbols-outlined">
-                      arrow_right_alt
-                    </span>Ethnic Wear</label></li>
-                <li><label for=""><span class="material-symbols-outlined">
-                      arrow_right_alt
-                    </span>Ethnic Wear</label></li>
-                <li><label for=""><span class="material-symbols-outlined">
-                      arrow_right_alt
-                    </span>Casual Wear</label></li>
-              </ul>
-            </li>
-            <li class="Best-collections">
-              <label for="Best-collections"><span class="material-symbols-outlined">
-                  arrow_right_alt
-                </span>Best Collections</label>
-              <input type="checkbox" id="Best-collections">
-              <ul class="category-list">
-                <li><label for=""><span class="material-symbols-outlined">
-                      arrow_right_alt
-                    </span>New Arrivals</label></li>
-              </ul>
-            </li>
-            <li class="Best-Offers">
-              <label for="Best_Offers">
-                <span class="material-symbols-outlined">
-                  arrow_right_alt
-                </span>Best Offers</label>
-              <input type="checkbox" id="Best_Offers">
-              <ul class="category-list">
-                <li><label for=""><span class="material-symbols-outlined">
-                      arrow_right_alt
-                    </span>Summer Discount Sale</label></li>
-                <li><label for=""><span class="material-symbols-outlined">
-                      arrow_right_alt
-                    </span>Exciting Offers</label></li>
-                <li><label for=""><span class="material-symbols-outlined">
-                      arrow_right_alt
-                    </span>Flat Discount</label></li>
-              </ul>
-            </li>
-          </ul>
+        <div class="box" style="background-image: url(./Images/card3.jpg);">
+            <div class="figcaption">
+                <p>New Arrivals</p>
+            </div>
+            <h1>FALL AHEAD</h1>
         </div>
-        <div class="community">
-          <h4>community Poll</h4>
-          <form action="">
-            <div class="c-checkbox">
-              <div class="radio">
-                <input type="radio" name="community" id="c1" value="More convenient for shipping and delivery">
-                <label for="c1">More convenient for shipping and delivery</label>
-              </div>
-            </div>
-            <div class="c-checkbox">
-              <div class="radio">
-                <input type="radio" name="community" id="c2" value="Lower Price">
-                <label for="c2">Lower Price</label>
-              </div>
-            </div>
-            <div class="c-checkbox">
-              <div class="radio">
-                <input type="radio" name="community" id="c3" value="Track your item">
-                <label for="c3">Track your item</label>
-              </div>
-            </div>
-            <div class="c-checkbox">
-              <div class="radio">
-                <input type="radio" name="community" id="c4" value="Big choice">
-                <label for="c4">Big choice</label>
-              </div>
-            </div>
-            <div class="c-checkbox">
-              <div class="radio">
-                <input type="radio" name="community" id="c5" value="More color to choose">
-                <label for="c5">More color to choose</label>
-              </div>
-            </div>
-            <div class="c-checkbox">
-              <div class="radio">
-                <input type="radio" name="community" id="c6" value="Secure Payment">
-                <label for="c6">Secure Payment</label>
-              </div>
-            </div>
-            <div class="c-checkbox">
-              <div class="radio">
-                <input type="radio" name="community" id="c7" value="Money Back Guarantee">
-                <label for="c7">Money Back Guarantee</label>
-              </div>
-            </div>
-            <div class="c-checkbox">
-              <div class="radio">
-                <input type="radio" name="community" id="c8" value="Others">
-                <label for="c8">Others</label>
-              </div>
-            </div>
-            <button type="submit">Send</button>
-          </form>
-        </div>
-      </div>
-      <div class="right-container">
-        <h2>
-          <span>Product</span> Compare(0)
-        </h2> <br />
-        <hr />
-        <div class="cl-fix">
-          <div class="cl-fixs">
-            <label for="select-filter">Sort By :</label>
-            <select name="Filter" id="select-filter">
-              <option value="">Default</option>
-              <option value="Name(A-Z)">Name(A-Z)</option>
-              <option value="Name(Z-A)">Name(Z-A)</option>
-              <option value="Price(High-Low)">Price(High-Low)</option>
-              <option value="Price(Low-High)">Price(Low-High)</option>
-              <option value="Model(A-Z)">Model(A-Z)</option>
-              <option value="Model(Z-A)">Model(Z-A)</option>
-            </select>
-          </div>
-          <div class="cl-fixs">
-            <label for="select-show">Showing :</label>
-            <select name="Show" id="select-show">
-              <option value="7">7</option>
-              <option value="14">14</option>
-              <option value="28">28</option>
-              <option value="35">35</option>
-            </select>
-          </div>
-        </div>
-        <hr />
-
-        <div class="crsl">
-          <img src="./Images/banner2.jpg" alt="">
-          <img src="./Images/banner2 (1).jpg" alt="">
-          <img src="./Images/banner1.jpg" alt="">
-
-          <div class="Img-tracker">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-
-        <div class="Con-col">
-          <div class="left-con">
-            <img src="./Images/bb2 (1).jpg" alt="">
-          </div>
-          <div class="right-con">
-            <h4><span>Exclusive Men's</span> Collections</h4>
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam
-              rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-              explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
-          </div>
-        </div>
-        <div class="BoxesContainer">
-          <div class="CardsContainer" id="mens">
-            <div class="ImgContainer">
-              <div class="QuickView">
-                <a href="#">Quick View</a>
-              </div>
-              <div class="flip-inner">
-
-                <div class="flip-front">
-                  <img src="./Images/m1.jpg" alt="Front">
-                </div>
-
-                <div class="flip-back">
-                  <img src="./Images/m1.jpg" alt="Back">
-                </div>
-              </div>
-            </div>
-            <a href="#">Formal Blue Shirt</a>
-            <div class="productPrice">
-              <span>$49.99</span>
-              <del>$59.99</del>
-            </div>
-            <div class="AddToCart">
-              <button>Add to cart</button>
-              <div class="BorderEffect"></div>
-            </div>
-          </div>
-          <div class="CardsContainer">
-            <div class="ImgContainer">
-              <div class="QuickView">
-                <a href="#">Quick View</a>
-              </div>
-              <div class="flip-inner">
-
-                <div class="flip-front">
-                  <img src="./Images/m2.jpg" alt="Front">
-                </div>
-
-                <div class="flip-back">
-                  <img src="./Images/m2.jpg" alt="Back">
-                </div>
-              </div>
-            </div>
-            <a href="#">Gabi Full Sleeve Sweatshirt</a>
-            <div class="productPrice">
-              <span>$49.99</span>
-              <del>$59.99</del>
-            </div>
-            <div class="AddToCart">
-              <button>Add to cart</button>
-              <div class="BorderEffect"></div>
-            </div>
-          </div>
-          <div class="CardsContainer">
-            <div class="ImgContainer">
-              <div class="QuickView">
-                <a href="#">Quick View</a>
-              </div>
-              <div class="flip-inner">
-
-                <div class="flip-front">
-                  <img src="./Images/m3.jpg" alt="Front">
-                </div>
-
-                <div class="flip-back">
-                  <img src="./Images/m3.jpg" alt="Back">
-                </div>
-              </div>
-            </div>
-            <a href="#">Dark Blue Track Pants</a>
-            <div class="productPrice">
-              <span>$85.99</span>
-              <del>$99.99</del>
-            </div>
-            <div class="AddToCart">
-              <button>Add to cart</button>
-              <div class="BorderEffect"></div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-
-  <div class="Container6">
-    <div class="BoxesContainer">
-              <div class="CardsContainer" id="mens">
-                  <div class="ImgContainer">
-                      <div class="QuickView">
-                          <a href="#">Quick View</a>
-                      </div>
-                      <div class="flip-inner">
-  
-                          <div class="flip-front">
-                              <img src="./Images/m1.jpg" alt="Front">
-                          </div>
-  
-                          <div class="flip-back">
-                              <img src="./Images/m1.jpg" alt="Back">
-                          </div>
-                      </div>
-                  </div>
-                  <a href="#">Formal Blue Shirt</a>
-                  <div class="productPrice">
-                      <span>$49.99</span>
-                      <del>$59.99</del>
-                  </div>
-                  <div class="AddToCart">
-                      <button>Add to cart</button>
-                      <div class="BorderEffect"></div>
-                  </div>
-              </div>
-              <div class="CardsContainer">
-                  <div class="ImgContainer">
-                      <div class="QuickView">
-                          <a href="#">Quick View</a>
-                      </div>
-                      <div class="flip-inner">
-  
-                          <div class="flip-front">
-                              <img src="./Images/m2.jpg" alt="Front">
-                          </div>
-  
-                          <div class="flip-back">
-                              <img src="./Images/m2.jpg" alt="Back">
-                          </div>
-                      </div>
-                  </div>
-                  <a href="#">Gabi Full Sleeve Sweatshirt</a>
-                  <div class="productPrice">
-                      <span>$49.99</span>
-                      <del>$59.99</del>
-                  </div>
-                  <div class="AddToCart">
-                      <button>Add to cart</button>
-                      <div class="BorderEffect"></div>
-                  </div>
-              </div>
-              <div class="CardsContainer">
-                  <div class="ImgContainer">
-                      <div class="QuickView">
-                          <a href="#">Quick View</a>
-                      </div>
-                      <div class="flip-inner">
-  
-                          <div class="flip-front">
-                              <img src="./Images/m3.jpg" alt="Front">
-                          </div>
-  
-                          <div class="flip-back">
-                              <img src="./Images/m3.jpg" alt="Back">
-                          </div>
-                      </div>
-                  </div>
-                  <a href="#">Dark Blue Track Pants</a>
-                  <div class="productPrice">
-                      <span>$85.99</span>
-                      <del>$99.99</del>
-                  </div>
-                  <div class="AddToCart">
-                      <button>Add to cart</button>
-                      <div class="BorderEffect"></div>
-                  </div>
-              </div>
-              <div class="CardsContainer">
-                  <div class="ImgContainer">
-                      <div class="QuickView">
-                          <a href="#">Quick View</a>
-                      </div>
-                      <div class="flip-inner">
-  
-                          <div class="flip-front">
-                              <img src="./Images/m4.jpg" alt="Front">
-                          </div>
-  
-                          <div class="flip-back">
-                              <img src="./Images/m4.jpg" alt="Back">
-                          </div>
-                      </div>
-                  </div>
-                  <a href="#">Round Neck Black T-Shirt</a>
-                  <div class="productPrice">
-                      <span>$192.99</span>
-                      <del>$199.99</del>
-                  </div>
-                  <div class="AddToCart">
-                      <button>Add to cart</button>
-                      <div class="BorderEffect"></div>
-                  </div>
-              </div>
-              <div class="CardsContainer">
-                  <div class="ImgContainer">
-                      <div class="QuickView">
-                          <a href="#">Quick View</a>
-                      </div>
-                      <div class="flip-inner">
-  
-                          <div class="flip-front">
-                              <img src="./Images/m5.jpg" alt="Front">
-                          </div>
-  
-                          <div class="flip-back">
-                              <img src="./Images/m5.jpg" alt="Back">
-                          </div>
-                      </div>
-                  </div>
-                  <a href="#">Men's Black Jeans</a>
-                  <div class="productPrice">
-                      <span>$60.99</span>
-                      <del>$69.99</del>
-                  </div>
-                  <div class="AddToCart">
-                      <button>Add to cart</button>
-                      <div class="BorderEffect"></div>
-                  </div>
-              </div>
-              <div class="CardsContainer">
-                  <div class="ImgContainer">
-                      <div class="QuickView">
-                          <a href="#">Quick View</a>
-                      </div>
-                      <div class="flip-inner">
-  
-                          <div class="flip-front">
-                              <img src="./Images/m7.jpg" alt="Front">
-                          </div>
-  
-                          <div class="flip-back">
-                              <img src="./Images/m7.jpg" alt="Back">
-                          </div>
-                      </div>
-                  </div>
-                  <a href="#">Analog Watch</a>
-                  <div class="productPrice">
-                      <span>$160.99</span>
-                      <del>$199.99</del>
-                  </div>
-                  <div class="AddToCart">
-                      <button>Add to cart</button>
-                      <div class="BorderEffect"></div>
-                  </div>
-              </div>
-              <div class="CardsContainer">
-                  <div class="ImgContainer">
-                      <div class="QuickView">
-                          <a href="#">Quick View</a>
-                      </div>
-                      <div class="flip-inner">
-  
-                          <div class="flip-front">
-                              <img src="./Images/m6.jpg" alt="Front">
-                          </div>
-  
-                          <div class="flip-back">
-                              <img src="./Images/m6.jpg" alt="Back">
-                          </div>
-                      </div>
-                  </div>
-                  <a href="#">Formal Blue Shirt</a>
-                  <div class="productPrice">
-                      <span>$30.99 </span>
-                      <del>$59.99</del>
-                  </div>
-                  <div class="AddToCart">
-                      <button>Add to cart</button>
-                      <div class="BorderEffect"></div>
-                  </div>
-              </div>
-              <div class="CardsContainer">
-                  <div class="ImgContainer">
-                      <div class="QuickView">
-                          <a href="#">Quick View</a>
-                      </div>
-                      <div class="flip-inner">
-  
-                          <div class="flip-front">
-                              <img src="./Images/m8.jpg" alt="Front">
-                          </div>
-  
-                          <div class="flip-back">
-                              <img src="./Images/m8.jpg" alt="Back">
-                          </div>
-                      </div>
-                  </div>
-                  <a href="#">Party Men's Blazer</a>
-                  <div class="productPrice">
-                      <span>$260.99</span>
-                      <del>$280.99</del>
-                  </div>
-                  <div class="AddToCart">
-                      <button>Add to cart</button>
-                      <div class="BorderEffect"></div>
-                  </div>
-              </div>
-    </div>
-  </div>
-
-  <script>
-
-    const minSlider = document.getElementById("min");
-    const maxSlider = document.getElementById("max");
-    const minValue = document.getElementById("min-value");
-    const maxValue = document.getElementById("max-value");
-    const sliderRange = document.getElementById("slider-range");
-
-    function updateSlider() {
-      let minVal = parseInt(minSlider.value);
-      let maxVal = parseInt(maxSlider.value);
-
-      if (minVal > maxVal - 500) {
-        minSlider.value = maxVal - 500;
-        minVal = maxVal - 0;
-      }
-
-      minValue.value = minVal;
-      maxValue.value = maxVal;
-
-      const rangeWidth = maxSlider.max;
-
-      sliderRange.style.left = (minVal / rangeWidth) * 100 + "%";
-      sliderRange.style.width = ((maxVal - minVal) / rangeWidth) * 100 + "%";
-    }
-
-    minSlider.addEventListener("input", updateSlider);
-    maxSlider.addEventListener("input", updateSlider);
-
-    updateSlider();
-
-    // Carousel functionality
-    const images = document.querySelectorAll('.crsl img');
-    const dots = document.querySelectorAll('.Img-tracker span');
-    let currentIndex = 0;
-    let autoSlideInterval;
-
-    function showSlide(index) {
-      // Remove active class from all
-      images.forEach(img => img.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
-
-      // Add active class to current
-      images[index].classList.add('active');
-      dots[index].classList.add('active');
-      currentIndex = index;
-    }
-
-    function nextSlide() {
-      let next = (currentIndex + 1) % images.length;
-      showSlide(next);
-    }
-
-    function startAutoSlide() {
-      autoSlideInterval = setInterval(nextSlide, 3000);
-    }
-
-    function resetAutoSlide() {
-      clearInterval(autoSlideInterval);
-      startAutoSlide();
-    }
-
-    // Click on dots to navigate
-    dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
-        showSlide(index);
-        resetAutoSlide();
-      });
-    });
-
-    // Initialize
-    showSlide(0);
-    startAutoSlide();
-  </script>
-
 </body>
 
 </html>
