@@ -509,7 +509,7 @@ label {
   font-size: 50px;
   margin-bottom: 20px;
   text-transform: uppercase;
-  font-weight: 100;
+  font-weight: lighter;
   letter-spacing: 10px;
   animation: fadeInUp 0.8s ease forwards;
 }
@@ -547,7 +547,7 @@ label {
   justify-content: center;
 }
 
-.ShopNow>button {
+.ShopNow>a>button {
   width: 70%;
   padding: 10px 0;
   background-color: #2fdab8;
@@ -557,6 +557,7 @@ label {
   cursor: pointer;
   margin-left: 30px;
   transition: all 0.3s ease;
+ backdrop-filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
 }
 
 /* .ShopNow>button:hover {
@@ -643,18 +644,17 @@ label {
   background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: all 0.3s ease;
-  border: 2px solid transparent;
+  border: 2px solid white;
 }
 
 .carousel-dots .dot:hover {
   background: rgba(255, 255, 255, 0.8);
-  transform: scale(1.2);
 }
 
 .carousel-dots .dot.active {
-  background: #2fdab8;
+  background: #ffffff;
   border-color: white;
-  transform: scale(1.2);
+  /* transform: scale(1.1); */
 }
 
 /* CAROUSEL RESPONSIVE */
